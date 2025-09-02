@@ -427,44 +427,117 @@
 		.extGrandfondB>* {
 			box-sizing: border-box !important;
 		}
+		 .fixed-social-icons {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+            /* Removed the media query hiding - now always visible */
+        }
+
+        .fixed-social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            /* Removed all shadow effects */
+            backdrop-filter: blur(8px);
+        }
+
+        .fixed-social-icons a:hover {
+            transform: scale(1.1);
+            background: #ffffff;
+            border-color: rgba(102, 126, 234, 0.4);
+            color: #5a67d8;
+            /* No shadow on hover either */
+        }
+
+        /* Specific hover colors for each platform */
+        .fixed-social-icons a.instagram:hover {
+            background: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
+            color: white;
+            border-color: #E4405F;
+        }
+
+        .fixed-social-icons a.facebook:hover {
+            background: #1877F2;
+            color: white;
+            border-color: #1877F2;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .fixed-social-icons {
+                right: 15px;
+                gap: 12px;
+            }
+            
+            .fixed-social-icons a {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fixed-social-icons {
+                right: 10px;
+                gap: 10px;
+            }
+            
+            .fixed-social-icons a {
+                width: 42px;
+                height: 42px;
+                font-size: 16px;
+            }
+        }
+
+        /* Demo content styling */
+        .demo-section {
+            background: white;
+            margin: 40px 20px;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
 	</style>
 </head>
 
 <body>
 	<div class="bg-verlia-cream font-inter">
-    <!-- Fixed Social Media Icons -->
-    <div class="fixed top-1/2 right-5 -translate-y-1/2 flex flex-col gap-4 z-50 hidden md:flex group hover:translate-x-1 transition-transform duration-300">
-        
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/verlia.ma/" 
-           target="_blank" 
-           title="Instagram"
-           class="w-14 h-14 rounded-full bg-verlia-gradient text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 hover:shadow-xl hover:shadow-pink-500/40 hover:scale-110 hover:translate-x-2 transition-all duration-300 group animate-slide-in-1 relative overflow-hidden hover:bg-instagram-gradient">
-            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-            <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-            </svg>
-        </a>
-
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/verlia.ma/" 
-           target="_blank" 
-           title="Facebook"
-           class="w-14 h-14 rounded-full bg-verlia-gradient text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-110 hover:translate-x-2 transition-all duration-300 group animate-slide-in-4 relative overflow-hidden hover:bg-facebook-gradient">
-            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-            <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-        </a>
-    </div>
-
-
+    
   </div>
 	<img src="images/loader.gif" alt="" id="load">
 	<div id="temps"></div>
-
+	<div class="fixed-social-icons">
+			<!-- Instagram -->
+			<a href="https://www.instagram.com/verlia.ma/" target="_blank" title="Instagram" class="instagram">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+					<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+					<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+					<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+				</svg>
+			</a>
+			
+			<!-- Facebook -->
+			<a href="https://www.facebook.com/verlia.ma/" target="_blank" title="Facebook" class="facebook">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+				</svg>
+			</a>
+	</div>
 	<div id="btmenu"><i id="b1"></i><b></b><i id="b2"></i><b></b><i id="b3"></i><b></b></div>
 
 	<div id="intro" style="padding-bottom: 0px;">
