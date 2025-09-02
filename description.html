@@ -34,7 +34,64 @@
       background-color: #F4F3EA;
       overflow-x: hidden;
     }
+.plan-item .plan-image img:hover {
+  transform: scale(1.02);
+}
 
+.plan-item:hover .spec-item {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for floor plans */
+@media (max-width: 1024px) {
+  .plan-item {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  
+  .plan-specs {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .floor-plans-section {
+    padding: 5rem 0 !important;
+  }
+  
+  .plans-grid {
+    gap: 4rem !important;
+  }
+  
+  .plan-item {
+    gap: 2rem !important;
+  }
+  
+  .plan-header h3 {
+    font-size: 1.8rem !important;
+  }
+  
+  .spec-item {
+    padding: 1rem !important;
+  }
+  
+  .plans-cta > div {
+    padding: 2rem !important;
+  }
+}
+
+/* CTA button hover effects */
+.plans-cta a:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.plans-cta a:last-child:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
     .nav-container {
       max-width: 1400px;
       margin: 0 auto;
@@ -1881,7 +1938,173 @@
         </div>
       </div>
     </section>
+  <section class="floor-plans-section" style="background: #F4F3EA; padding: 8rem 0;">
+  <div class="container">
+    <div class="section-header">
+          <h2 class="section-title">Plans et Configurations</h2>
+          <p class="section-subtitle">DÉCOUVREZ NOS DIFFÉRENTS MODÈLES DE STUDIOS</p>
+        </div>
+    <div class="floor-plans-content">
+      
+      <div class="plans-grid" style="display: grid; grid-template-columns: 1fr; gap: 6rem; max-width: 1000px; margin: 0 auto;">
+        
+        <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
+            <img src="/images/plan1.jpeg" alt="Plan Studio 58m2 - L'Hermitage" 
+                 style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
+            <div class="plan-overlay" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">S 01</div>
+              <div style="font-size: 0.9rem; color: #666;">1er étage</div>
+            </div>
+          </div>
+          <div class="plan-details">
+            <div class="plan-header" style="margin-bottom: 2rem;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Studio 58m²</h3>
+              <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Avec parking 13m² - 1er étage</p>
+              <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
+            </div>
+            
+            <div class="plan-specs" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+              <div class="spec-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">58m²</div>
+                <div style="font-size: 0.9rem; color: #666;">Surface habitable</div>
+              </div>
+              <div class="spec-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">13m²</div>
+                <div style="font-size: 0.9rem; color: #666;">Parking inclus</div>
+              </div>
+            </div>
 
+            <div class="plan-features">
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Cuisine équipée</strong> avec plan de travail optimisé
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Balcon privé</strong> de 6m² avec vue dégagée
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Rangements intégrés</strong> dans l'espace nuit
+                </li>
+                <li style="padding: 0.8rem 0; color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Salle de bain</strong> avec finitions marbre Ibiza
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 2 - 53m2 avec parking 13m2 -->
+        <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div class="plan-details">
+            <div class="plan-header" style="margin-bottom: 2rem;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Studio 53m²</h3>
+              <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Avec parking 13m² - Duplex 3ème étage</p>
+              <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
+            </div>
+            
+            <div class="plan-specs" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+              <div class="spec-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">53m²</div>
+                <div style="font-size: 0.9rem; color: #666;">Surface habitable</div>
+              </div>
+              <div class="spec-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">13m²</div>
+                <div style="font-size: 0.9rem; color: #666;">Parking inclus</div>
+              </div>
+            </div>
+
+            <div class="plan-features">
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Configuration duplex</strong> avec espace nuit en mezzanine
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Double hauteur</strong> dans l'espace salon
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Balcon de 8m²</strong> avec vue panoramique
+                </li>
+                <li style="padding: 0.8rem 0; color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Optimisation verticale</strong> de l'espace
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
+            <img src="/images/plan2.jpeg" alt="Plan Studio 53m2 Duplex - L'Hermitage" 
+                 style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
+            <div class="plan-overlay" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">S 02</div>
+              <div style="font-size: 0.9rem; color: #666;">Duplex 3ème étage</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 3 - 58m2 avec parking 13m2 -->
+        <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+          <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
+            <img src="/images/plan3.jpeg" alt="Plan Studio 58m2 Premium - L'Hermitage" 
+                 style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
+            <div class="plan-overlay" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">S 03</div>
+              <div style="font-size: 0.9rem; color: #666;">1er et 3ème étage</div>
+            </div>
+          </div>
+          <div class="plan-details">
+            <div class="plan-header" style="margin-bottom: 2rem;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Studio 58m²</h3>
+              <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Avec parking 13m² - Disponible 1er et 3ème étage</p>
+              <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
+            </div>
+            
+            <div class="plan-specs" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+              <div class="spec-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">58m²</div>
+                <div style="font-size: 0.9rem; color: #666;">Surface habitable</div>
+              </div>
+              <div class="spec-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                <div style="font-size: 1.8rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">13m²</div>
+                <div style="font-size: 0.9rem; color: #666;">Parking inclus</div>
+              </div>
+            </div>
+
+            <div class="plan-features">
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Plan optimisé</strong> avec séparation jour/nuit
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Grand balcon de 8m²</strong> avec vue imprenable
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Cuisine américaine</strong> avec îlot central
+                </li>
+                <li style="padding: 0.8rem 0; color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Dressing intégré</strong> et espaces de rangement
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
     <!-- Detailed Features Section -->
     <section class="detailed-features">
       <div class="container">
@@ -1985,7 +2208,7 @@
           <img src="images/Plan_01_3d_.png" alt="Verlia L'Hermitage - Façade moderne sans vis-à-vis" loading="lazy">
           <img src="images/Plan_02_3d.png" alt="Verlia L'Hermitage - Studio lumineux et fonctionnel" loading="lazy">
           <img src="images/Verlia3.jpeg" alt="Verlia L'Hermitage - Cuisine italienne équipée trio" loading="lazy">
-          <img src="images/Verlia4.jpeg" alt="Verlia L'Hermitage - Salle de bain marbre Ibiza" loading="lazy">
+          <img src="images/verlia11.jpeg" alt="Verlia L'Hermitage - Salle de bain marbre Ibiza" loading="lazy">
           <img src="images/Verlia5.jpeg" alt="Verlia L'Hermitage - Parquet soigné et portes noyer" loading="lazy">
           <img src="images/Verlia6.jpeg" alt="Verlia L'Hermitage - Finitions premium et matériaux nobles"
             loading="lazy">
