@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Hermitage - Studios Haut Standing | Verlia Living</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/Styles-v8.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'playfair': ['Playfair Display', 'serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-blue': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        'gradient-dark': 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+                        'gradient-cta': 'linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9))',
+                    }
+                },
+                    backgroundImage: {
+                        'verlia-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                        'instagram-gradient': 'linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%)',
+                        'youtube-gradient': 'linear-gradient(135deg, #FF0000 0%, #CC0000 100%)',
+                        'whatsapp-gradient': 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+                        'facebook-gradient': 'linear-gradient(135deg, #1877F2 0%, #0C5AA6 100%)',
+                    },
+                    animation: {
+                        'slide-in-1': 'slideIn 0.6s ease-out 0.1s both',
+                        'slide-in-2': 'slideIn 0.6s ease-out 0.2s both',
+                        'slide-in-3': 'slideIn 0.6s ease-out 0.3s both',
+                        'slide-in-4': 'slideIn 0.6s ease-out 0.4s both',
+                    }
+            }
+        }
+    </script>
+</head>
+<body>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #F4F3EA;
+  overflow-x: hidden;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.logo-line {
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 1px;
+}
+
+.logo-line:nth-child(1) {
+  width: 20px;
+}
+.logo-line:nth-child(2) {
+  width: 30px;
+}
+.logo-line:nth-child(3) {
+  width: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-menu a:hover {
+  color: #667eea;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/images/imgs001.jpeg") center / cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%); */
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 1000px;
+  padding: 0 2rem;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-feature {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  opacity: 0.8;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.scroll-arrow {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 0;
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.section-subtitle::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.container2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  margin-top: -150px;
+}
+
+/* Project Overview Section */
+.project-overview {
+  background: #F4F3EA;
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.column {
+  background: #F4F3EA;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.column-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.column-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.column:hover .column-image img {
+  transform: scale(1.05);
+}
+
+.column-content {
+  padding: 2.5rem 2rem;
+  text-align: left;
+}
+
+.column-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.column-desc {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.column-features {
+  list-style: none;
+}
+
+.column-features li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.column-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Detailed Features Section */
+.detailed-features {
+  background: #F4F3EA;
+  padding: 8rem 0;
+}
+
+.features-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.features-intro {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  text-align: left;
+}
+
+.feature-block {
+  background: #F4F3EA;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.feature-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.feature-list {
+  list-style: none;
+}
+
+.feature-list li {
+  margin-bottom: 1.2rem;
+  padding-left: 2rem;
+  position: relative;
+  line-height: 1.6;
+  color: #555;
+}
+
+.feature-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Equipment Section */
+.equipment-section {
+  background: #F4F3EA;
+  padding: 8rem 0;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  margin-top: 4rem;
+}
+
+.equipment-item {
+  position: relative;
+  min-height: 500px;
+}
+
+.equipment-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.equipment-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.equipment-content {
+  background: #F4F3EA;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+}
+
+.equipment-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.equipment-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.equipment-features {
+  list-style: none;
+}
+
+.equipment-features li {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.equipment-features li:last-child {
+  border-bottom: none;
+}
+
+.equipment-features strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.why-choose-section {
+  position: relative;
+  padding: 8rem 0;
+  color: #F4F3EA;
+  text-align: center;
+  overflow: hidden;
+}
+
+.why-choose-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/placeholder.svg?height=800&width=1920") center / cover;
+  z-index: -2;
+}
+
+.why-choose-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(52, 73, 94, 0.9) 100%);
+  z-index: -1;
+}
+
+.why-choose-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-section .section-title {
+  color: white;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.why-choose-section .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.why-choose-section .section-subtitle::after {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.two-column-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.text-block {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 3rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.text-block p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact-section {
+  background: #f8f9fa;
+  padding: 8rem 0;
+}
+
+/* Added comprehensive contact form and info styling */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form-container,
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-card,
+.contact-info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.form-title,
+.info-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.95rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea {
+  padding: 1rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit-btn {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.form-submit-btn:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-info-item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2.5rem;
+}
+
+/* Map card styling */
+.contact-map-card {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.map-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.map-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.address-icon {
+  background: #e74c3c;
+}
+
+.phone-icon {
+  background: #e91e63;
+}
+
+.email-icon {
+  background: #9c27b0;
+}
+
+.hours-icon {
+  background: #607d8b;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.schedule-visit-btn {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.schedule-visit-btn:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Gallery Section */
+.gallery-section {
+  background: #F4F3EA;
+  padding: 8rem 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  filter: saturate(0.95) contrast(1.02);
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  filter: none;
+}
+
+/* Footer */
+.simple-footer {
+  background: linear-gradient(180deg, #2c3e50 0%, #304357 100%);
+  color: #F4F3EA;
+  padding: 4rem 0 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.footer-brand .logo-text img {
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.25));
+}
+
+.footer-brand .tagline {
+  margin-top: 1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #F4F3EA;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-column h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  position: relative;
+}
+
+.footer-column h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 0.65rem 0;
+}
+
+.footer-column a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.contact-info .contact-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0.65rem 0;
+  color: rgba(255,255,255,0.9);
+}
+
+.contact-info .contact-item svg {
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-bottom .footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-bottom a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .three-columns {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-column-text {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Added responsive contact form layout */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .why-choose-section .section-title {
+    font-size: 2.5rem;
+  }
+
+  .text-block {
+    padding: 2rem;
+  }
+
+  .equipment-content {
+    padding: 3rem 2rem;
+  }
+
+  .feature-block {
+    padding: 2rem;
+  }
+
+  /* Added mobile contact form styling */
+  .contact-form-card,
+  .contact-info-card {
+    padding: 2rem;
+  }
+  /* Hide floating social icons on small screens */
+  .social-icons { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .column-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .equipment-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .text-block {
+    padding: 1.5rem;
+  }
+
+  /* Added mobile contact form adjustments */
+  .contact-form-card,
+  .contact-info-card {
+    padding: 1.5rem;
+  }
+
+  .form-title,
+  .info-title {
+    font-size: 1.5rem;
+  }
+}
+
+.social-icons {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    /* Icon Buttons */
+    .social-icons a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(44, 62, 80, 0.15);
+      color: #2c3e50;
+      font-size: 24px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s, border-color 0.3s;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Hover Effect */
+    .social-icons a:hover {
+      transform: scale(1.05);
+      background: #ffffff;
+      color: #667eea;
+      border-color: rgba(102, 126, 234, 0.35);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.20);
+    }
+
+    /* Neutral brand modifiers (no bright brand backgrounds) */
+    .instagram, .youtube, .whatsapp { background: none; }
+/* Smooth scrolling enhancement */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+
+    </style>
+    
+    <div class="bg-verlia-cream font-inter">
+    <!-- Fixed Social Media Icons -->
+    <div class="fixed top-1/2 right-5 -translate-y-1/2 flex flex-col gap-4 z-50 hidden md:flex group hover:translate-x-1 transition-transform duration-300">
+        
+        <a href="https://www.instagram.com/verlia.ma/" 
+           target="_blank" 
+           title="Instagram"
+           class="w-14 h-14 rounded-full bg-verlia-gradient text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 hover:shadow-xl hover:shadow-pink-500/40 hover:scale-110 hover:translate-x-2 transition-all duration-300 group animate-slide-in-1 relative overflow-hidden hover:bg-instagram-gradient">
+            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+           
+            <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+            </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@verlia" 
+           target="_blank" 
+           title="YouTube"
+           class="w-14 h-14 rounded-full bg-verlia-gradient text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 hover:shadow-xl hover:shadow-red-500/40 hover:scale-110 hover:translate-x-2 transition-all duration-300 group animate-slide-in-2 relative overflow-hidden hover:bg-youtube-gradient">
+            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/212XXXXXXXXX" 
+           target="_blank" 
+           title="WhatsApp"
+           class="w-14 h-14 rounded-full bg-verlia-gradient text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 hover:shadow-xl hover:shadow-green-500/40 hover:scale-110 hover:translate-x-2 transition-all duration-300 group animate-slide-in-3 relative overflow-hidden hover:bg-whatsapp-gradient">
+            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+            </svg>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/verlia.ma/" 
+           target="_blank" 
+           title="Facebook"
+           class="w-14 h-14 rounded-full bg-verlia-gradient text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-110 hover:translate-x-2 transition-all duration-300 group animate-slide-in-4 relative overflow-hidden hover:bg-facebook-gradient">
+            <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+            <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+        </a>
+    </div>
+
+
+  </div>
+    
+		<a href="index.php" id="logo"><img src="images/verlia-logo-blanc.png"
+				alt="Verlia immobilier, promoteur haut standing Casablanca"
+				style="max-width: 100px; height: auto;"></a>
+
+      <ul id="menu" class="Mblanc">
+        <li><a href="#nos-biens" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
+        <li><a href="vendre.php"><span>Vendre<i></i></span></a></li>
+        <li><a href="#location-gestion" class="lieninterieur"><span>Gestion<i></i></span></a></li>
+        <li><a href="estimer.php"><span>Estimer<i></i></span></a></li>
+        <li><a href="contact.php"><span>Contact<i></i></span></a></li>
+      </ul>
+
+
+        <section class="hero-section" id="presentation">
+        <div class="hero-overlay"></div>
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Studios Haut Standing à L'Hermitage</h1>
+            <p class="hero-subtitle">À partir de 1.000.000 DHS | Titres Fonciers</p>
+            <p class="hero-description">Un projet moderne avec cuisine équipée, climatisation centralisée, isolation renforcée, fibre optique, garage et finitions premium</p>
+            <div class="hero-features">
+                <span class="hero-feature">L'ÉLÉGANCE</span>
+                <span class="hero-feature">LE CONFORT</span>
+                <span class="hero-feature">LA SÉCURITÉ</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <p>DÉCOUVRIR L'HERMITAGE</p>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="project-overview" id="caracteristiques">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Votre nouveau chez-vous, en plein cœur de L'Hermitage</h2>
+                    <p class="section-subtitle">DÉCOUVREZ UN PROJET IMMOBILIER HAUT STANDING À CASABLANCA</p>
+                </div>
+
+                <div class="three-columns">
+                    <div class="column">
+                        <div class="column-image">
+                            <img src="/images/imgs003.jpeg" alt="Caractéristiques principales" />
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title">CARACTÉRISTIQUES PRINCIPALES</h3>
+                            <p class="column-desc">Ce qui fait la différence</p>
+                            <ul class="column-features">
+                                 Added specific anchor IDs for individual features 
+                                <li id="cuisine">Studios de prestige avec titres fonciers disponibles</li>
+                                <li id="climatisation">Surface de 35 à 45 m² optimisée</li>
+                                <li id="securite">Hauteur sous plafond 2,80 m</li>
+                                <li id="garage">Balcons privés de 6 à 8 m²</li>
+                                <li id="finitions">Immeuble sans vis-à-vis</li>
+                                <li>Garage et boxes privatifs inclus</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="column-image">
+                            <img src="/images/imgs002.jpeg" alt="Finitions et matériaux" />
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title">FINITIONS ET MATÉRIAUX</h3>
+                            <p class="column-desc">Matériaux nobles et design moderne</p>
+                            <ul class="column-features">
+                                 Added specific anchor IDs for materials 
+                                <li id="marbre">Marbre Ibiza pour un raffinement absolu</li>
+                                <li id="parquet">Parquet soigné dans les espaces de vie</li>
+                                <li id="noyer">Portes en noyer massif</li>
+                                <li>Cuisine italienne équipée en trio</li>
+                                <li id="menuiserie">Menuiserie aluminium Stregale</li>
+                                <li id="isolation">Isolation renforcée pour silence et confort</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="column-image">
+                            <img src="/images/imgs005.jpeg" alt="Emplacement privilégié" />
+                        </div>
+                        <div class="column-content">
+                            <h3 class="column-title" id="emplacement">EMPLACEMENT PRIVILÉGIÉ</h3>
+                            <p class="column-desc">Immeuble sans vis-à-vis / Quartier Anoual</p>
+                            <ul class="column-features">
+                                <li>Quartier Anoual recherché</li>
+                                <li>Proximité des commodités</li>
+                                <li>Transport en commun accessible</li>
+                                <li>Environnement calme et sécurisé</li>
+                                <li>Vue dégagée sans vis-à-vis</li>
+                                <li>Luminosité naturelle optimale</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Features Section -->
+        <section class="detailed-features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Un projet d'exception à L'Hermitage</h2>
+                    <p class="section-subtitle">OFFREZ-VOUS PLUS QU'UN STUDIO : UN CADRE DE VIE HAUT DE GAMME</p>
+                </div>
+                
+                <div class="features-content">
+                    <p class="features-intro">
+                        Profitez d'un espace de vie clé en main, pensé pour allier confort quotidien et valorisation patrimoniale
+                    </p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-block">
+                            <h4 class="feature-title">Prestations Premium</h4>
+                            <ul class="feature-list">
+                                <li><strong>Titres fonciers disponibles</strong> pour une acquisition sécurisée</li>
+                                <li><strong>Studios lumineux, fonctionnels</strong> et prêts à emménager</li>
+                                <li><strong>Cuisine italienne équipée en trio :</strong> design, ergonomie et performance</li>
+                                <li><strong>Climatisation centralisée</strong> et isolation thermique & phonique</li>
+                                <li><strong>Garage et box privatifs inclus</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-block">
+                            <h4 class="feature-title">Matériaux Nobles & Sécurité</h4>
+                            <ul class="feature-list">
+                                <li><strong>Sécurité premium</strong> avec vidéophone et poignées biométriques</li>
+                                <li><strong>Immeuble sans vis-à-vis,</strong> garantissant intimité et luminosité</li>
+                                <li><strong>Menuiserie aluminium Stregale</strong> avec double vitrage</li>
+                                <li><strong>Matériaux nobles :</strong> marbre Ibiza, parquet soigné, portes en noyer massif</li>
+                                <li><strong>Connexion internet haut débit</strong> grâce à la fibre optique intégrée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="equipment-section" id="equipements">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Équipements et Services</h2>
+                    <p class="section-subtitle">TECHNOLOGIE ET CONFORT MODERNE</p>
+                </div>
+
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <div class="equipment-content">
+                            <h3 class="equipment-title">TECHNOLOGIE INTÉGRÉE</h3>
+                            <p class="equipment-subtitle">Fibre optique et climatisation centralisée</p>
+                            <ul class="equipment-features">
+                                <li><strong>Fibre optique intégrée :</strong> Connexion internet haut débit dans chaque studio</li>
+                                <li><strong>Climatisation centralisée :</strong> Confort optimal en toute saison</li>
+                                <li><strong>Isolation thermique & phonique :</strong> Isolation renforcée pour silence et confort</li>
+                                <li><strong>Cuisine italienne équipée :</strong> Trio design, ergonomie et performance</li>
+                                <li><strong>Menuiserie Stregale :</strong> Aluminium avec double vitrage</li>
+                                <li><strong>Domotique intégrée :</strong> Contrôle intelligent des équipements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="equipment-item">
+                        <div class="equipment-image">
+                            <img src="/images/Plan 3d I S01.png" alt="Technologie intégrée" />
+                        </div>
+                    </div>
+
+                    <div class="equipment-item">
+                        <div class="equipment-image">
+                            <img src="/images/Plan_01_3D__2_.png" alt="Sécurité premium" />
+                        </div>
+                    </div>
+
+                    <div class="equipment-item">
+                        <div class="equipment-content">
+                            <h3 class="equipment-title">SÉCURITÉ PREMIUM</h3>
+                            <p class="equipment-subtitle">Vidéophone et poignées biométriques</p>
+                            <ul class="equipment-features">
+                                <li><strong>Vidéophone :</strong> Contrôle d'accès avec écran couleur</li>
+                                <li><strong>Poignées biométriques :</strong> Reconnaissance digitale pour accès sécurisé</li>
+                                <li><strong>Surveillance 24h/24 :</strong> Gardiennage permanent et sécurité renforcée</li>
+                                <li><strong>Garage et boxes privatifs :</strong> Stationnement sécurisé inclus</li>
+                                <li><strong>Accès sécurisé :</strong> Contrôle d'entrée dans l'immeuble</li>
+                                <li><strong>Éclairage automatique :</strong> Parties communes intelligentes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section" >
+            <div class="container2">
+                <div class="section-header">
+                    <h2 class="section-title">L'Hermitage en images</h2>
+                    <p class="section-subtitle">STUDIOS PREMIUM AVEC FINITIONS HAUT DE GAMME</p>
+                </div>
+                <div class="gallery-grid">
+                    <img src="images/Plan_01_3d_.png" alt="Verlia L'Hermitage - Façade moderne sans vis-à-vis" loading="lazy">
+                    <img src="images/Plan_02_3d.png" alt="Verlia L'Hermitage - Studio lumineux et fonctionnel" loading="lazy">
+                    <img src="images/Verlia3.jpeg" alt="Verlia L'Hermitage - Cuisine italienne équipée trio" loading="lazy">
+                    <img src="images/Verlia4.jpeg" alt="Verlia L'Hermitage - Salle de bain marbre Ibiza" loading="lazy">
+                    <img src="images/Verlia5.jpeg" alt="Verlia L'Hermitage - Parquet soigné et portes noyer" loading="lazy">
+                    <img src="images/Verlia6.jpeg" alt="Verlia L'Hermitage - Finitions premium et matériaux nobles" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose-section" id="pourquoi">
+            <div class="why-choose-overlay"></div>
+            <div class="why-choose-background"></div>
+            <div class="why-choose-content">
+                <div class="section-header">
+                    <h2 class="section-title">Pourquoi choisir L'Hermitage ?</h2>
+                    <p class="section-subtitle">UNE OPPORTUNITÉ RARE À CASABLANCA</p>
+                </div>
+
+                <div class="two-column-text">
+                    <div class="text-block">
+                        <p>Offrez-vous plus qu'un studio : un véritable cadre de vie haut de gamme. Chaque logement bénéficie de prestations premium : climatisation centralisée, cuisine italienne équipée, finitions en marbre Ibiza et parquet, et des équipements pensés pour votre tranquillité : garage, sécurité biométrique, fibre optique, isolation phonique et thermique.</p>
+                        <p><strong>Emplacement recherché, immeuble sans vis-à-vis. Titres fonciers disponibles – prêts à l'acquisition. Idéal pour investisseurs ou jeunes actifs.</strong></p>
+                        <a href="#contact" class="cta-button">Visiter les logements témoins</a>
+                    </div>
+                    <div class="text-block">
+                        <p>Une opportunité rare dans un emplacement stratégique, situé dans l'un des quartiers les plus recherchés de Casablanca : l'Hermitage. Chaque détail a été pensé pour répondre aux exigences d'un cadre de vie moderne et raffiné, alliant luxe, confort et sécurité.</p>
+                        <p><strong>À partir de seulement 1.000.000 DHS. Studios lumineux et fonctionnels, prêts à emménager, garantissant intimité et luminosité naturelle.</strong></p>
+                        <a href="#contact" class="cta-button">Prendre rendez-vous</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contactez-nous</h2>
+                    <p class="section-subtitle">PRENEZ RENDEZ-VOUS POUR UNE VISITE</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-form-container">
+                        <div class="contact-form-card">
+                            <h3 class="form-title">Demande d'Information</h3>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <label for="fullName" class="form-label">Nom complet</label>
+                                    <input type="text" id="fullName" name="fullName" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Votre demande d'information sur L'Hermitage..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="form-submit-btn">Envoyer ma demande</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-container">
+                        <div class="contact-info-card">
+                            <h3 class="info-title">Informations de Contact</h3>
+                            
+                            <div class="contact-info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div class="contact-details">
+                                    <h4 class="contact-label">Adresse</h4>
+                                    <p class="contact-value">Quartier Anoual, Casablanca, Maroc</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+                                <div class="contact-details">
+                                    <h4 class="contact-label">Téléphone</h4>
+                                    <p class="contact-value">+212 5XX-XXX-XXX</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                                <div class="contact-details">
+                                    <h4 class="contact-label">Email</h4>
+                                    <p class="contact-value">contact@verlia.ma</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+    
+  </div>
+  <body class="font-inter">
+
+    <!-- Modern Footer -->
+    <footer class="bg-gradient-dark text-white relative overflow-hidden">
+        <!-- Grid Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="w-full h-full" style="background-image: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 20&quot;><defs><pattern id=&quot;grid&quot; width=&quot;10&quot; height=&quot;10&quot; patternUnits=&quot;userSpaceOnUse&quot;><path d=&quot;M 10 0 L 0 0 0 10&quot; fill=&quot;none&quot; stroke=&quot;rgba(255,255,255,0.1)&quot; stroke-width=&quot;1&quot;/></pattern></defs><rect width=&quot;100&quot; height=&quot;20&quot; fill=&quot;url(%23grid)&quot;/></svg>');"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Brand Section -->
+                <div class="lg:col-span-1 lg:pr-8">
+                    <div class="mb-6">
+                        <img src="images/verlia-logo-blanc.png" alt="Verlia immobilier, promoteur Casablanca" class="h-12 w-auto filter brightness-0 invert">
+                    </div>
+                    <p class="text-white/80 text-sm leading-relaxed mb-8">
+                        Excellence immobilière depuis 2009. Promoteur de projets haut standing à Casablanca, spécialisé dans le développement de résidences premium avec des finitions exceptionnelles.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex gap-3 mb-8">
+                        <a href="https://www.facebook.com/verlia.ma/" target="_blank" class="w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/verlia.ma/" target="_blank" class="w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" class="w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Newsletter Section -->
+                    
+                </div>
+
+                <!-- L'Hermitage Column -->
+                <div>
+                    <h4 class="font-playfair text-xl text-white mb-6 font-medium relative pb-2">
+                        L'Hermitage
+                        <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-blue rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#presentation" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Studios premium
+                        </a></li>
+                        <li><a href="#caracteristiques" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Caractéristiques
+                        </a></li>
+                        <li><a href="#finitions" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Finitions haut de gamme
+                        </a></li>
+                        <li><a href="#emplacement" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Emplacement privilégié
+                        </a></li>
+                        <li><a href="#equipements" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Équipements modernes
+                        </a></li>
+                        <li><a href="#galerie" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Galerie photos
+                        </a></li>
+                        <li><a href="#prix" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Tarifs et financement
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Column -->
+                <div>
+                    <h4 class="font-playfair text-xl text-white mb-6 font-medium relative pb-2">
+                        Nos Services
+                        <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-blue rounded-full"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#presentation" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Développement immobilier
+                        </a></li>
+                        <li><a href="vendre.php" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Vente de biens
+                        </a></li>
+                        <li><a href="#equipements" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Gestion locative
+                        </a></li>
+                        <li><a href="estimer.php" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Estimation gratuite
+                        </a></li>
+                        <li><a href="temoignages.php" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Témoignages clients
+                        </a></li>
+                        <li><a href="#contact" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Conseil personnalisé
+                        </a></li>
+                        <li><a href="#financement" class="text-white/70 hover:text-white hover:pl-2 transition-all duration-300 text-sm flex items-center group">
+                            <span class="opacity-0 group-hover:opacity-100 text-blue-400 font-bold mr-2 transition-opacity duration-300">→</span>
+                            Solutions de financement
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="font-playfair text-xl text-white mb-6 font-medium relative pb-2">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-8 h-0.5 bg-gradient-blue rounded-full"></span>
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-1 p-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/10 hover:translate-x-1 transition-all duration-300">
+                            <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div class="text-sm">
+                                <div class="text-white font-medium">Adresse</div>
+                                <div class="text-white/80 leading-relaxed">Quartier Anoual<br>Casablanca, Maroc</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-1 p-1 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg hover:bg-white/10 hover:translate-x-1 transition-all duration-300">
+                            <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <div class="text-sm">
+                                <div class="text-white font-medium">Téléphone</div>
+                                <div class="text-white/80">+212 5XX-XXX-XXX</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-1 p-1 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:translate-x-1 transition-all duration-300">
+                            <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <div class="text-sm">
+                                <div class="text-white font-medium">Email</div>
+                                <div class="text-white/80">contact@verlia.ma</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
+                <div class="text-white/60 text-sm text-center md:text-left">
+                    © 2025 Verlia. Tous droits réservés. | Développement immobilier haut standing Casablanca
+                </div>
+               
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="js/LIB2021.js"></script>
+	<script src="js/Comportements-v17.js"></script>
+    <script>
+        // Smooth scroll function for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle hash in URL on page load
+            if (window.location.hash) {
+                setTimeout(function() {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }, 100);
+            }
+
+            // Handle all anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL hash
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+        });
+    </script>
