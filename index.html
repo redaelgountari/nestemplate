@@ -154,7 +154,7 @@
 			left: 0;
 		}
 
-		.custom-images-row {
+	.custom-images-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,19 +164,42 @@
 }
 
 .custom-images-row img {
-    max-width: 120px;
-    height: auto;
-    object-fit: contain;
+    width: 120px;           /* fixed width */
+    height: 120px;          /* fixed height - same as width for square */
+    object-fit: cover;      /* covers the entire area, may crop image */
     border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
+
+.custom-images-row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 600px) {
     .custom-images-row {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;    /* keep horizontal layout */
+        gap: 8px;               /* smaller gap for mobile */
+        justify-content: space-between;
     }
 
     .custom-images-row img {
-        max-width: 80%;   /* scale nicely on mobile */
+        width: 28%;             /* smaller width */
+        height: 60px;           /* much smaller height */
+        min-width: 60px;        /* smaller minimum width */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-images-row {
+        gap: 5px;
+    }
+    
+    .custom-images-row img {
+        width: 30%;
+        height: 50px;           /* very small on tiny screens */
+        min-width: 50px;
     }
 }
 		/* Dark section styling */
@@ -516,7 +539,6 @@
             border-radius: 12px;
             border: 1px solid #e2e8f0;
         }
-		.fondgris { background-color: #f5f5f5; }
         .coulnoir { color: #333; }
         .trait::after {
             content: '';
@@ -612,7 +634,7 @@
 
 		<ul id="menu" class="Mblanc">
 			<li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
-			<li><a href="description.html#estime"><span>Organiser une visite<i></i></span></a></li>
+			<li><a href="description.html#contact"><span>Organiser une visite<i></i></span></a></li>
 			<li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
 		</ul>
 
@@ -739,7 +761,7 @@
 		</div>
 
 	</div>
-	<div class="fondbeige paddB15 ano0 paddH8">
+	<div class="fondbeige paddB15 ano0 paddH8" style="margin-top: -5%;">
 		<div class="titreA paddH2 anc1" id="location-gestion">
 			<h2 class="titreAint coulnoir"><strong>Équipements et Services</strong><i class="trait"></i><span>Technologie et confort moderne</span></h2>
 		</div>
@@ -773,7 +795,7 @@
 
 	</div>
 
-	<div class="paddH13 fondgris paddB15 ano0" style="margin-top: -150px;">
+	<div class="paddH13 fondgris paddB15 ano0" style="margin-top: -7%;">
 
 			<div class="fondgris py-8" style="margin-top: -150px; padding-left: 13px; padding-right: 13px; padding-bottom: 15px;">
         <!-- Title Section -->
@@ -869,7 +891,7 @@
     </div>
 	</div>
 
-	<div class="paddH13 fondbeige ano0 paddB15" style="margin-top: -190px;">
+	<div class="paddH13 fondbeige ano0 paddB15" style="margin-top: -15%;">
 		<div class="titreA paddH2 anc1" id="garanties">
 			<h2 class="titreAint coulnoir"><strong>Garanties et Service Client</strong><i class="trait"></i><span>Votre tranquillité d'esprit, notre priorité</span></h2>
 		</div>
@@ -902,7 +924,7 @@
 		<div class="custom-container">
 			<div class="custom-title-section">
 
-				<div class="titreA paddH2 anc1" id="garanties">
+				<div class="titreA paddH2 anc1" id="garanties" style="margin-top: -6%;">
 					<h2 class="titreAint coulnoir"><strong>Processus de Développement</strong><i class="trait"></i><span>Excellence technique et suivi rigoureux</span></h2>
 				</div>
 			</div>
@@ -925,9 +947,15 @@
 					</div>
 
 					<div class="custom-images-row">
-						<img src="images/qc.jpg" alt="Verlia - quality verrification">
-						<img src="images/iso.png" alt="Verlia - certifiés iso">
-						<img src="images/guranty.jpg" alt="Verlia - Modélisation 3D précise">
+						<a href="description.html#plan1">
+							<img src="images/plan1.jpeg" alt="Verlia - Contrôle qualité construction">
+						</a>
+						<a href="description.html#plan2">
+							<img src="images/plan2.jpeg" alt="Verlia - Matériaux premium certifiés">
+						</a>
+						<a href="description.html#plan3">
+							<img src="images/plan3.jpeg" alt="Verlia - Finitions haut de gamme">
+						</a>
 					</div>
 				</div>
 
@@ -946,12 +974,12 @@
 							<li>Réception avec garanties étendues</li>
 						</ul>
 					</div>
-
 					<div class="custom-images-row">
-						<img src="images/plan1.jpeg" alt="Verlia - Contrôle qualité construction">
-						<img src="images/plan2.jpeg" alt="Verlia - Matériaux premium certifiés">
-						<img src="images/plan3.jpeg" alt="Verlia - Finitions haut de gamme">
+						<img src="images/qc2.png" alt="Verlia - quality verrification">
+						<img src="images/iso00.png" alt="Verlia - certifiés iso">
+						<img src="images/guranty.jpg" alt="Verlia - Modélisation 3D précise">
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -968,12 +996,12 @@
 			<div class="custom-lifestyle-content">
 				<div class="custom-text-blocks">
 					<div class="custom-text-block">
-						<p>L'Hermitage redéfinit l'art de vivre urbain avec ses espaces pensés pour votre bien-être. Chaque studio bénéficie d'une luminosité naturelle optimale grâce à l'absence de vis-à-vis, créant une atmosphère sereine et apaisante. Les finitions premium et l'agencement intelligent maximisent l'espace tout en préservant l'intimité.</p>
+						<p>L’Hermitage redéfinit l’art de vivre urbain avec des espaces conçus pour votre bien-être. Chaque studio bénéficie d’une luminosité naturelle optimale grâce à l’absence de vis-à-vis, créant une atmosphère paisible et apaisante. Les finitions haut de gamme et l’agencement intelligent maximisent l’espace tout en préservant l’intimité des résidents.</p>
 						<a href="description.html#visite" class="btsimple">Découvrir nos espaces <img src="images/surv.gif" alt="" class="surv"></a>
 					</div>
 					
 					<div class="custom-text-block">
-						<p>Profitez d'un environnement sécurisé 24h/24 avec accès biométrique et vidéophone. La proximité des commerces, restaurants et espaces verts du quartier Anoual offre un équilibre parfait entre tranquillité résidentielle et dynamisme urbain. Un investissement dans un mode de vie privilégié.</p>
+						<p>L'Hermitage redéfinit l’art de vivre urbain avec des espaces conçus pour votre bien-être. Chaque studio profite d’une luminosité naturelle optimale grâce à l’absence de vis-à-vis, offrant une atmosphère sereine et apaisante. Les finitions premium et l’agencement intelligent optimisent chaque mètre carré tout en préservant votre intimité.</p>
 						<a href="description.html#quartier" class="btsimple">Explorer le quartier <img src="images/surv.gif" alt="" class="surv"></a>
 					</div>
 				</div>
@@ -1013,11 +1041,11 @@
 		</div>
 		<div class="ext2 margH4">
 			<div class="bloctexteA T1 ano0">
-				<p>Le quartier Anoual offre un cadre de vie exceptionnel, alliant tranquillité résidentielle et proximité des centres d'affaires. Situé dans une zone en pleine expansion, L'Hermitage bénéficie d'un environnement privilégié avec accès facile aux commerces, écoles, et transports. Un emplacement idéal pour les jeunes actifs et les familles.</p>
+				<p>Le quartier offre un environnement préservé et sans vis-à-vis, garantissant intimité et luminosité naturelle. Idéalement situé, il profite d’une proximité immédiate avec les principaux axes routiers, centres commerciaux, établissements scolaires et espaces verts. Un emplacement privilégié au cœur d’une zone en pleine valorisation, offrant un excellent potentiel de croissance.</p>
 				<a href="description.html#quartier" class="btsimple">Découvrir le quartier <img src="images/surv.gif" alt="" class="surv"></a>
 			</div>
 			<div class="bloctexteA T2 ano0">
-				<p>Profitez d'un environnement sans vis-à-vis garantissant intimité et luminosité naturelle. Proximité immédiate des axes routiers principaux, centres commerciaux, établissements scolaires et espaces verts. Un investissement dans un quartier en pleine valorisation avec un potentiel de croissance exceptionnel.</p>
+				<p>Profitez d’un cadre préservé, sans vis-à-vis, pour une intimité totale et une belle luminosité naturelle. Idéalement situé, le quartier bénéficie d’une proximité directe avec les grands axes routiers, centres commerciaux, établissements scolaires et espaces verts. Un investissement sûr dans une zone en pleine expansion, offrant un fort potentiel de valorisation.</p>
 				<a href="description.html#visite" class="btsimple">Planifier une visite <img src="images/surv.gif" alt="" class="surv"></a>
 			</div>
 			<div class="ret"></div>
@@ -1278,7 +1306,6 @@
 					<li><a href="description.html#prix">Titres fonciers<i></i></a></li>
 					<li class="ret"></li>
 					<li><a href="description.html#presentation">Garanties projet<i></i></a></li>
-					<li><a href="temoignages.php">Témoignages clients<i></i></a></li>
 				</ul>
 
 				<!-- <a class="reseaux" href="https://www.instagram.com/verlia.ma/" target="_blank"><img
@@ -1287,7 +1314,7 @@
 						src="images/Facebook.png" alt="Facebook Verlia"></a> -->
 			</div>
 			<div class="ret"></div>
-			<a id="mentions" href="mentions-legales-site-internet.php">Mentions légales - Verlia 2025</a>
+			<a id="mentions" href="#">Mentions légales - Verlia 2025</a>
 			<div id="fondnavD"></div>
 		</div>
 		<div class="ret"></div>

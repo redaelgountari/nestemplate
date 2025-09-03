@@ -1765,7 +1765,7 @@
     <ul id="menu" class="Mblanc">
       <li><a href="index.html" class="lieninterieur"><span>Accueil<i></i></span></a></li>
       <li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
-      <li><a href="description.html#estime"><span>Organiser une visite<i></i></span></a></li>
+      <li><a href="description.html#contact"><span>Organiser une visite<i></i></span></a></li>
       <li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
     </ul>
 
@@ -1813,9 +1813,11 @@
       <div id="navD1">
         <strong>L'Hermitage<i></i></strong>
         <ul>
-          <li><a href="description.html#presentation">Studios premium<i></i></a></li>
-          <li><a href="description.htmldescription.html#caracteristiques">Caractéristiques<i></i></a></li>
-          <li><a href="description.html#prix">Prix et financement<i></i></a></li>
+         <div id="menu0">
+          <li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
+          <li><a href="description.html#estime"><span>Organiser une visite<i></i></span></a></li>
+          <li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
+         </div>
         </ul>
         <strong class="mhx1">Équipements<i></i></strong>
         <ul>
@@ -1838,7 +1840,6 @@
           <li><a href="description.html#prix">Titres fonciers<i></i></a></li>
           <li class="ret"></li>
           <li><a href="description.html#presentation">Garanties projet<i></i></a></li>
-          <li><a href="temoignages.php">Témoignages clients<i></i></a></li>
         </ul>
 
         <!-- <a class="reseaux" href="https://www.instagram.com/verlia.ma/" target="_blank"><img loading="lazy" src="images/instagram.png"
@@ -1847,7 +1848,6 @@
             alt="Facebook Verlia"></a> -->
       </div>
       <div class="ret"></div>
-      <a id="mentions" href="mentions-legales-site-internet.php">Mentions légales - Verlia 2025</a>
       <div id="fondnavD"></div>
     </div>
     <div class="ret"></div>
@@ -1938,7 +1938,7 @@
         </div>
       </div>
     </section>
-  <section class="floor-plans-section" style="background: #F4F3EA; padding: 8rem 0;">
+  <section class="floor-plans-section" style="background: #F4F3EA; padding: 8rem 0; margin-top: -2%;">
   <div class="container">
     <div class="section-header" id="estime">
           <h2 class="section-title">Plans et Configurations</h2>
@@ -1948,7 +1948,7 @@
       
       <div class="plans-grid" style="display: grid; grid-template-columns: 1fr; gap: 6rem; max-width: 1000px; margin: 0 auto;">
         
-        <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div class="plan-item" id="plan1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
           <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
             <img loading="lazy" src="/images/plan1.jpeg" alt="Plan Studio 58m2 - L'Hermitage" 
                  style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
@@ -1960,7 +1960,7 @@
           <div class="plan-details">
             <div class="plan-header" style="margin-bottom: 2rem;">
               <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Studio 58m²</h3>
-              <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Avec parking 13m² - 1er étage</p>
+              <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;" >Avec parking 13m² - 1er étage</p>
               <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
             </div>
             
@@ -1999,10 +1999,10 @@
         </div>
 
         <!-- Plan 2 - 53m2 avec parking 13m2 -->
-        <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" id="plan2">
           <div class="plan-details">
             <div class="plan-header" style="margin-bottom: 2rem;">
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Studio 53m²</h3>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;" >Studio 53m²</h3>
               <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Avec parking 13m² - Duplex 3ème étage</p>
               <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
             </div>
@@ -2059,9 +2059,9 @@
               <div style="font-size: 0.9rem; color: #666;">1er et 3ème étage</div>
             </div>
           </div>
-          <div class="plan-details">
+          <div class="plan-details" id="plan3">
             <div class="plan-header" style="margin-bottom: 2rem;">
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Studio 58m²</h3>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;" >Studio 58m²</h3>
               <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Avec parking 13m² - Disponible 1er et 3ème étage</p>
               <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
             </div>
@@ -2106,7 +2106,7 @@
   </div>
 </section>
     <!-- Detailed Features Section -->
-    <section class="detailed-features" style="margin-top: -50px;">
+    <section class="detailed-features" style="margin-top: -5%;">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Un projet d'exception à L'Hermitage</h2>
@@ -2216,7 +2216,7 @@
       </div>
     </section> -->
 <!-- Location and Accessibility Section -->
-    <section class="location-section" style="background: #F4F3EA; padding: 8rem 0; margin-top: -130px;">
+    <section class="location-section" style="background: #F4F3EA; padding: 8rem 0; margin-top: -7%;">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Un Emplacement Stratégique</h2>
@@ -2295,18 +2295,13 @@
 
         <div class="two-column-text">
           <div class="text-block">
-            <p>Offrez-vous plus qu'un studio : un véritable cadre de vie haut de gamme. Chaque logement bénéficie de
-              prestations premium : climatisation centralisée, cuisine italienne équipée, finitions en marbre Ibiza et
-              parquet, et des équipements pensés pour votre tranquillité : garage, sécurité biométrique, fibre optique,
-              isolation phonique et thermique.</p>
+            <p>Offrez-vous bien plus qu’un simple studio : un véritable cadre de vie haut de gamme. Chaque logement propose des prestations premium avec climatisation centralisée, cuisine italienne équipée, finitions en marbre Ibiza, parquet élégant, ainsi que des équipements pensés pour votre confort et votre tranquillité : garage sécurisé, sécurité biométrique, fibre optique, isolation phonique et thermique, le tout dans un environnement moderne et raffiné.</p>
             <p><strong>Emplacement recherché, immeuble sans vis-à-vis. Titres fonciers disponibles – prêts à
                 l'acquisition. Idéal pour investisseurs ou jeunes actifs.</strong></p>
             <a href="#contact" class="cta-button">Visiter les logements témoins</a>
           </div>
           <div class="text-block">
-            <p>Une opportunité rare dans un emplacement stratégique, situé dans l'un des quartiers les plus recherchés
-              de Casablanca : l'Hermitage. Chaque détail a été pensé pour répondre aux exigences d'un cadre de vie
-              moderne et raffiné, alliant luxe, confort et sécurité.</p>
+            <p>Saisissez une opportunité rare dans un emplacement stratégique, au cœur de l’un des quartiers les plus prisés de Casablanca : l’Hermitage. Conçu pour répondre aux attentes les plus exigeantes, le projet allie luxe, confort et modernité, offrant des prestations raffinées, des finitions haut de gamme et une sécurité optimale pour un cadre de vie d’exception pensé dans les moindres détails, alliant élégance et fonctionnalité au quotidien.</p>
             <p><strong>À partir de seulement 1.000.000 DHS. Studios lumineux et fonctionnels, prêts à emménager,
                 garantissant intimité et luminosité naturelle.</strong></p>
             <a href="#contact" class="cta-button">Prendre rendez-vous</a>
@@ -2659,28 +2654,563 @@ document.addEventListener('click', function(e) {
     
 <script>
 // Alternative simpler approach
+// Enhanced Navigation and Smooth Scrolling Script
 document.addEventListener('DOMContentLoaded', function() {
-  const hash = window.location.hash;
-  
-  if (hash) {
-    // Remove hash immediately
-    history.replaceState(null, null, ' ');
     
-    // Wait for everything to load and animations to complete
-    setTimeout(function() {
-      const targetElement = document.querySelector(hash);
-      if (targetElement) {
-        // Simple scroll to element
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+    // Function to close any open sections/menus
+    function closeSections() {
+        // Close mobile menu if open
+        const menu = document.getElementById('menu');
+        const navigation = document.getElementById('navigation');
+        const btmenu = document.getElementById('btmenu');
         
-        // Optional: Restore hash after scrolling
-        setTimeout(function() {
-          history.replaceState(null, null, hash);
-        }, 10000);
-      }
-    }, 800); // Slightly longer delay to ensure animations are done
-  }
+        if (menu && menu.classList.contains('active')) {
+            menu.classList.remove('active');
+        }
+        
+        // Close navigation overlay if open
+        if (navigation && navigation.classList.contains('active')) {
+            navigation.classList.remove('active');
+        }
+        
+        // Reset menu button state
+        if (btmenu && btmenu.classList.contains('active')) {
+            btmenu.classList.remove('active');
+        }
+        
+        // Close any other modal or overlay elements
+        const modals = document.querySelectorAll('.modal, .overlay, .popup');
+        modals.forEach(modal => {
+            if (modal.style.display === 'block' || modal.classList.contains('active')) {
+                modal.style.display = 'none';
+                modal.classList.remove('active');
+            }
+        });
+        
+        // Remove any body scroll locks
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+    }
+    
+    // Function for smooth scrolling to target
+    function smoothScrollTo(targetElement, offset = 80) {
+        if (!targetElement) return;
+        
+        const targetPosition = targetElement.offsetTop - offset;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = Math.min(Math.abs(distance) * 0.5, 1200); // Dynamic duration, max 1200ms
+        let start = null;
+        
+        function animation(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            } else {
+                // Ensure we end up exactly at the target
+                window.scrollTo(0, targetPosition);
+                
+                // Add a subtle highlight effect to the target section
+                targetElement.style.transition = 'background-color 0.3s ease';
+                const originalBg = targetElement.style.backgroundColor;
+                targetElement.style.backgroundColor = 'rgba(102, 126, 234, 0.05)';
+                
+                setTimeout(() => {
+                    targetElement.style.backgroundColor = originalBg;
+                    setTimeout(() => {
+                        targetElement.style.transition = '';
+                    }, 300);
+                }, 1000);
+            }
+        }
+        
+        // Easing function for smooth animation
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+    }
+    
+    // Handle all internal navigation links
+    function handleInternalLinks() {
+        const internalLinks = document.querySelectorAll('a[href*="#"], a.lieninterieur, a[href^="description.html#"], a[href^="index.html#"], a[href^="#"]');
+        
+        internalLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Skip if it's an external link or doesn't contain a hash
+                if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) {
+                    return;
+                }
+                
+                // Extract the hash part
+                let hash = '';
+                if (href.includes('#')) {
+                    hash = href.split('#')[1];
+                }
+                
+                // If no hash, let default behavior handle it
+                if (!hash) return;
+                
+                // Prevent default behavior
+                e.preventDefault();
+                
+                // Close any open sections first
+                closeSections();
+                
+                // Wait a moment for sections to close, then scroll
+                setTimeout(() => {
+                    const targetElement = document.getElementById(hash);
+                    
+                    if (targetElement) {
+                        // Update URL without triggering scroll
+                        history.pushState(null, null, `#${hash}`);
+                        
+                        // Smooth scroll to target
+                        smoothScrollTo(targetElement);
+                        
+                        // Focus management for accessibility
+                        if (targetElement.tabIndex < 0) {
+                            targetElement.tabIndex = -1;
+                        }
+                        targetElement.focus({ preventScroll: true });
+                    } else {
+                        console.warn(`Target element with ID "${hash}" not found`);
+                    }
+                }, 200); // Small delay to allow sections to close
+            });
+        });
+    }
+    
+    // Handle browser back/forward navigation
+    window.addEventListener('popstate', function(e) {
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            const targetElement = document.getElementById(hash);
+            
+            if (targetElement) {
+                closeSections();
+                setTimeout(() => {
+                    smoothScrollTo(targetElement);
+                }, 100);
+            }
+        }
+    });
+    
+    // Handle direct hash navigation on page load
+    function handleInitialHash() {
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            const targetElement = document.getElementById(hash);
+            
+            if (targetElement) {
+                // Prevent browser's default scroll
+                setTimeout(() => {
+                    window.scrollTo(0, 0);
+                }, 1);
+                
+                // Wait for page to fully load and animations to complete
+                setTimeout(() => {
+                    smoothScrollTo(targetElement);
+                }, 1000);
+            }
+        }
+    }
+    
+    // Initialize everything
+    handleInternalLinks();
+    handleInitialHash();
+    
+    // Handle menu toggle functionality
+    const menuToggle = document.getElementById('btmenu');
+    const navigation = document.getElementById('navigation');
+    
+    if (menuToggle && navigation) {
+        menuToggle.addEventListener('click', function() {
+            const isActive = navigation.classList.contains('active');
+            
+            if (isActive) {
+                closeSections();
+            } else {
+                navigation.classList.add('active');
+                menuToggle.classList.add('active');
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (navigation.classList.contains('active') && 
+                !navigation.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                closeSections();
+            }
+        });
+    }
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeSections();
+        }
+    });
+    
+    // Handle form submissions (if any) to prevent page jumps
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            // Add your form handling logic here
+            // For now, prevent default to avoid page jumps
+            e.preventDefault();
+            
+            // Example: Show success message without page reload
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Simulate form processing
+            setTimeout(() => {
+                submitBtn.textContent = 'Message envoyé !';
+                submitBtn.style.backgroundColor = '#10b981';
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.backgroundColor = '';
+                    form.reset();
+                }, 3000);
+            }, 2000);
+        });
+    });
 });
+
+// Additional utility function for external use
+window.verliaScrollTo = function(targetId, offset = 80) {
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        // Close sections first
+        if (typeof closeSections === 'function') {
+            closeSections();
+        }
+        
+        setTimeout(() => {
+            smoothScrollTo(targetElement, offset);
+        }, 200);
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Select all links inside the #menu0 div
+    const menuLinks = document.querySelectorAll("#menu0 a");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function() {
+            // Delay menu click so the browser can scroll to anchor first
+            setTimeout(() => {
+                const menuButton = document.getElementById("btmenu");
+                if (menuButton) {
+                    menuButton.click();
+                }
+            }, 50); // 50ms delay is usually enough
+        });
+    });
+});
+// Replace your existing navigation JavaScript with this corrected version
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Function to properly close all sections/menus
+    function closeSections() {
+        console.log('Closing sections...'); // Debug log
+        
+        // Close mobile menu if open
+        const menu = document.getElementById('menu');
+        const navigation = document.getElementById('navigation');
+        const btmenu = document.getElementById('btmenu');
+        
+        if (menu) {
+            menu.classList.remove('active');
+        }
+        
+        // Close navigation overlay if open
+        if (navigation) {
+            navigation.classList.remove('active');
+            navigation.style.display = ''; // Reset display
+        }
+        
+        // Reset menu button state
+        if (btmenu) {
+            btmenu.classList.remove('active');
+        }
+        
+        // Close any other modal or overlay elements
+        const modals = document.querySelectorAll('.modal, .overlay, .popup');
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+            modal.classList.remove('active');
+        });
+        
+        // CRITICAL: Always restore scrolling ability
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.documentElement.style.overflow = '';
+        document.documentElement.style.position = '';
+        
+        // Remove any positioning locks that might prevent scrolling
+        const html = document.documentElement;
+        const body = document.body;
+        
+        html.style.height = '';
+        body.style.height = '';
+        html.style.position = '';
+        body.style.position = '';
+        
+        console.log('Sections closed, scrolling restored'); // Debug log
+    }
+    
+    // Improved smooth scrolling function
+    function smoothScrollTo(targetElement, offset = 80) {
+        if (!targetElement) return;
+        
+        console.log('Scrolling to:', targetElement.id); // Debug log
+        
+        // Ensure scrolling is enabled before attempting to scroll
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        
+        const targetPosition = targetElement.offsetTop - offset;
+        
+        // Use native smooth scrolling if available, with fallback
+        if ('scrollBehavior' in document.documentElement.style) {
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            // Fallback for older browsers
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = Math.min(Math.abs(distance) * 0.5, 1200);
+            let start = null;
+            
+            function animation(currentTime) {
+                if (start === null) start = currentTime;
+                const timeElapsed = currentTime - start;
+                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+            
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+            
+            requestAnimationFrame(animation);
+        }
+    }
+    
+    // Handle internal navigation links
+    function handleInternalLinks() {
+        const internalLinks = document.querySelectorAll('a[href*="#"], a.lieninterieur');
+        console.log('Found', internalLinks.length, 'internal links'); // Debug log
+        
+        internalLinks.forEach((link, index) => {
+            link.addEventListener('click', function(e) {
+                console.log('Link clicked:', this.href); // Debug log
+                
+                const href = this.getAttribute('href');
+                
+                // Skip external links
+                if (!href || href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) {
+                    return;
+                }
+                
+                // Extract hash
+                let hash = '';
+                if (href.includes('#')) {
+                    hash = href.split('#')[1];
+                } else {
+                    return; // No hash, let default behavior handle
+                }
+                
+                e.preventDefault();
+                console.log('Navigating to hash:', hash); // Debug log
+                
+                // CRITICAL: Close sections first and ensure scrolling is enabled
+                closeSections();
+                
+                // Small delay to ensure menu is properly closed
+                setTimeout(() => {
+                    const targetElement = document.getElementById(hash);
+                    
+                    if (targetElement) {
+                        // Update URL
+                        history.pushState(null, null, `#${hash}`);
+                        
+                        // Double-check scrolling is enabled
+                        document.body.style.overflow = '';
+                        document.documentElement.style.overflow = '';
+                        
+                        // Scroll to target
+                        smoothScrollTo(targetElement);
+                        
+                        // Focus for accessibility
+                        if (targetElement.tabIndex < 0) {
+                            targetElement.tabIndex = -1;
+                        }
+                        targetElement.focus({ preventScroll: true });
+                    } else {
+                        console.warn(`Target element with ID "${hash}" not found`);
+                    }
+                }, 300); // Increased delay to ensure menu closes properly
+            });
+        });
+    }
+    
+    // Handle menu toggle with proper cleanup
+    const menuToggle = document.getElementById('btmenu');
+    const navigation = document.getElementById('navigation');
+    
+    if (menuToggle && navigation) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Menu toggle clicked'); // Debug log
+            
+            const isActive = navigation.classList.contains('active');
+            
+            if (isActive) {
+                console.log('Closing menu'); // Debug log
+                closeSections();
+            } else {
+                console.log('Opening menu'); // Debug log
+                // Close any existing menus first
+                closeSections();
+                
+                // Then open the menu
+                setTimeout(() => {
+                    navigation.classList.add('active');
+                    menuToggle.classList.add('active');
+                    // Only prevent scrolling when menu is actually open
+                    document.body.style.overflow = 'hidden';
+                }, 50);
+            }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (navigation.classList.contains('active') && 
+                !navigation.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                console.log('Clicked outside menu, closing'); // Debug log
+                closeSections();
+            }
+        });
+    }
+    
+    // Enhanced menu link handling specifically for #menu0
+    const menu0Links = document.querySelectorAll("#menu0 a");
+    menu0Links.forEach(link => {
+        link.addEventListener("click", function(e) {
+            console.log('Menu0 link clicked:', this.href); // Debug log
+            
+            // Small delay to allow the anchor navigation to start
+            setTimeout(() => {
+                console.log('Closing menu after menu0 click'); // Debug log
+                closeSections();
+            }, 100);
+        });
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            console.log('Escape pressed, closing sections'); // Debug log
+            closeSections();
+        }
+    });
+    
+    // Handle browser navigation
+    window.addEventListener('popstate', function(e) {
+        console.log('Browser navigation detected'); // Debug log
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            const targetElement = document.getElementById(hash);
+            
+            if (targetElement) {
+                closeSections();
+                setTimeout(() => {
+                    smoothScrollTo(targetElement);
+                }, 200);
+            }
+        }
+    });
+    
+    // Initialize
+    handleInternalLinks();
+    
+    // Handle initial hash on page load
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        const targetElement = document.getElementById(hash);
+        
+        if (targetElement) {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 1);
+            
+            setTimeout(() => {
+                closeSections(); // Ensure no sections are blocking
+                smoothScrollTo(targetElement);
+            }, 1000);
+        }
+    }
+    
+    // Failsafe: Restore scrolling every 5 seconds if something goes wrong
+    setInterval(() => {
+        // Only restore if no menu is actually open
+        const navigation = document.getElementById('navigation');
+        if (!navigation || !navigation.classList.contains('active')) {
+            if (document.body.style.overflow === 'hidden') {
+                console.log('Failsafe: Restoring scrolling'); // Debug log
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+        }
+    }, 5000);
+});
+
+// Utility function for manual scrolling
+window.verliaScrollTo = function(targetId, offset = 80) {
+    console.log('Manual scroll to:', targetId); // Debug log
+    
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        // Ensure scrolling is enabled
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        
+        setTimeout(() => {
+            smoothScrollTo(targetElement, offset);
+        }, 100);
+    }
+};
 </script>
 
   </body>
