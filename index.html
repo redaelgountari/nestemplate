@@ -16,6 +16,63 @@
 	<script>document.documentElement.className += "H";</script>
 	<link rel="stylesheet" type="text/css" href="css/Styles-v8.css" media="screen">
     <script src="https://cdn.tailwindcss.com"></script>
+	<!-- SEO: Canonical, Robots, Theme Color -->
+	<link rel="canonical" href="https://verlia.ma/">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#142748">
+
+	<!-- Open Graph -->
+	<meta property="og:locale" content="fr_FR">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Verlia">
+	<meta property="og:title" content="Verlia - Promoteur immobilier haut standing Casablanca">
+	<meta property="og:description" content="Verlia, promoteur immobilier à Casablanca. Studios haut standing L'Hermitage avec titres fonciers. À partir de 1.000.000 DHS.">
+	<meta property="og:url" content="https://verlia.ma/">
+	<meta property="og:image" content="https://verlia.ma/images/Verlia1.jpeg">
+	<meta property="og:image:alt" content="Studios haut standing Verlia à Casablanca">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Verlia - Promoteur immobilier haut standing Casablanca">
+	<meta name="twitter:description" content="Studios haut standing L'Hermitage avec titres fonciers. À partir de 1.000.000 DHS.">
+	<meta name="twitter:image" content="https://verlia.ma/images/Verlia1.jpeg">
+
+	<!-- JSON-LD Structured Data -->
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Verlia",
+  "url": "https://verlia.ma/",
+  "inLanguage": "fr-FR",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://verlia.ma/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+	</script>
+	<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Verlia",
+  "url": "https://verlia.ma/",
+  "logo": "https://verlia.ma/images/verlia-logo-blanc.png",
+  "sameAs": [
+    "https://www.facebook.com/verlia.ma/",
+    "https://www.instagram.com/verlia.ma/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "contact@verlia.ma",
+    "telephone": "+212 5XX-XXX-XXX",
+    "areaServed": "MA",
+    "availableLanguage": ["fr", "ar"]
+  }
+}
+	</script>
 
 	<script>
         tailwind.config = {
@@ -719,7 +776,7 @@
 				</div>
 
 				<div class="imagessect">
-					<img src="images/pom.jpeg" alt="Verlia L'Hermitage - Matériaux nobles et finitions haut de gamme"
+					<img src="images/ol.jpeg" alt="Verlia L'Hermitage - Matériaux nobles et finitions haut de gamme"
 						class="prem">
 					<img src="images/WhatsApp Image 2025-08-28 at 16.21.43 (1).jpeg"
 						alt="Verlia L'Hermitage - Design moderne et raffiné">
@@ -1281,9 +1338,9 @@
 			<div id="navD1">
 				<strong>L'Hermitage<i></i></strong>
 				<ul>
-					<li><a href="description.html#presentation">Studios premium<i></i></a></li>
-					<li><a href="description.html#caracteristiques">Caractéristiques<i></i></a></li>
-					<li><a href="description.html#prix">Prix et financement<i></i></a></li>
+					<li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
+          <li><a href="description.html#contact"><span>Organiser une visite<i></i></span></a></li>
+          <li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
 				</ul>
 				<strong class="mhx1">Équipements<i></i></strong>
 				<ul>
@@ -1438,6 +1495,7 @@
         // Initialize carousel
         updateCarousel();
     </script>
+	
 </body>
 
 </html>

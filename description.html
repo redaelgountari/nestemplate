@@ -16,6 +16,48 @@
   <script>document.documentElement.className += "H";</script>
   <link rel="stylesheet" type="text/css" href="css/Styles-v8.css" media="screen">
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- SEO: Canonical, Robots, Theme Color -->
+  <link rel="canonical" href="https://verlia.ma/description.html">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#142748">
+  
+  <!-- Open Graph -->
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Verlia">
+  <meta property="og:title" content="Studio 58 m² – L’Hermitage | Verlia Casablanca">
+  <meta property="og:description" content="Studios haut standing à L'Hermitage, Casablanca. Titres fonciers, finitions premium, climatisation centralisée. À partir de 1.000.000 DHS.">
+  <meta property="og:url" content="https://verlia.ma/description.html">
+  <meta property="og:image" content="https://verlia.ma/images/verlia11.jpeg">
+  <meta property="og:image:alt" content="Studio haut standing Verlia à L'Hermitage Casablanca">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Studio 58 m² – L’Hermitage | Verlia Casablanca">
+  <meta name="twitter:description" content="Studios premium à Casablanca avec titres fonciers et finitions haut de gamme.">
+  <meta name="twitter:image" content="https://verlia.ma/images/verlia11.jpeg">
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Studio 58 m² – L’Hermitage",
+  "url": "https://verlia.ma/description.html",
+  "inLanguage": "fr-FR",
+  "image": "https://verlia.ma/images/verlia11.jpeg",
+  "description": "Studios haut standing à L'Hermitage, Casablanca. Titres fonciers, finitions premium, climatisation centralisée.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Verlia",
+    "url": "https://verlia.ma/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://verlia.ma/images/verlia-logo-blanc.png"
+    }
+  }
+}
+  </script>
   <style>
     * {
       margin: 0;
@@ -1783,7 +1825,7 @@
         <span>Découvrez les détails, le plan et les finitions de ce modèle unique</span>
       </a></div>
 
-    <img loading="lazy" id="video" src="images/verlia11.jpeg" alt="Verlia - Studios haut standing L'Hermitage Casablanca"
+    <img loading="lazy" id="video" src="images/Verlia4.jpeg" alt="Verlia - Studios haut standing L'Hermitage Casablanca"
       class="video-image">
     <div id="cover"></div>
   </div>
@@ -1815,7 +1857,7 @@
         <ul>
          <div id="menu0">
           <li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
-          <li><a href="description.html#estime"><span>Organiser une visite<i></i></span></a></li>
+          <li><a href="description.html#contact"><span>Organiser une visite<i></i></span></a></li>
           <li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
          </div>
         </ul>
@@ -2692,53 +2734,50 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.style.overflow = '';
     }
     
-    // Function for smooth scrolling to target
-    function smoothScrollTo(targetElement, offset = 80) {
-        if (!targetElement) return;
-        
-        const targetPosition = targetElement.offsetTop - offset;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = Math.min(Math.abs(distance) * 0.5, 1200); // Dynamic duration, max 1200ms
-        let start = null;
-        
-        function animation(currentTime) {
-            if (start === null) start = currentTime;
-            const timeElapsed = currentTime - start;
-            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, run);
-            
-            if (timeElapsed < duration) {
-                requestAnimationFrame(animation);
-            } else {
-                // Ensure we end up exactly at the target
-                window.scrollTo(0, targetPosition);
-                
-                // Add a subtle highlight effect to the target section
-                targetElement.style.transition = 'background-color 0.3s ease';
-                const originalBg = targetElement.style.backgroundColor;
-                targetElement.style.backgroundColor = 'rgba(102, 126, 234, 0.05)';
-                
-                setTimeout(() => {
-                    targetElement.style.backgroundColor = originalBg;
-                    setTimeout(() => {
-                        targetElement.style.transition = '';
-                    }, 300);
-                }, 1000);
-            }
-        }
-        
-        // Easing function for smooth animation
-        function easeInOutQuad(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return c / 2 * t * t + b;
-            t--;
-            return -c / 2 * (t * (t - 2) - 1) + b;
-        }
-        
-        requestAnimationFrame(animation);
+// FAST smooth scrolling function - much quicker animation
+function smoothScrollTo(targetElement, offset = 80) {
+    if (!targetElement) return;
+    
+    const targetPosition = targetElement.offsetTop - offset;
+    
+    // Use native smooth scrolling for best performance and speed
+    if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+        return;
     }
     
+    // Fallback with MUCH faster animation
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    
+    // FIXED: Much shorter duration - max 600ms instead of 1200ms
+    const duration = Math.min(Math.abs(distance) * 0.2, 600); // Reduced from 0.5 to 0.2 and max from 1200 to 600
+    let start = null;
+    
+    function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+    
+    // Easing function for smooth animation
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+    
+    requestAnimationFrame(animation);
+}
     // Handle all internal navigation links
     function handleInternalLinks() {
         const internalLinks = document.querySelectorAll('a[href*="#"], a.lieninterieur, a[href^="description.html#"], a[href^="index.html#"], a[href^="#"]');
