@@ -1646,7 +1646,7 @@
     .extGrandfondB>* {
       box-sizing: border-box !important;
     }
-     .fixed-social-icons {
+    .fixed-social-icons {
             position: fixed;
             top: 50%;
             right: 20px;
@@ -1655,19 +1655,33 @@
             flex-direction: column;
             gap: 15px;
             z-index: 1000;
-            /* Removed the media query hiding - now always visible */
         }
 
-        .fixed-social-icons a {
+     .fixed-social-icons a.instagram {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
             border: 2px solid rgba(102, 126, 234, 0.2);
-            color: #667eea;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+        .fixed-social-icons a.facebook {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1877F2;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            color: white;
             font-size: 20px;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -1675,28 +1689,6 @@
             backdrop-filter: blur(8px);
         }
 
-        .fixed-social-icons a:hover {
-            transform: scale(1.1);
-            background: #ffffff;
-            border-color: rgba(102, 126, 234, 0.4);
-            color: #5a67d8;
-            /* No shadow on hover either */
-        }
-
-        /* Specific hover colors for each platform */
-        .fixed-social-icons a.instagram:hover {
-            background: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
-            color: white;
-            border-color: #E4405F;
-        }
-
-        .fixed-social-icons a.facebook:hover {
-            background: #1877F2;
-            color: white;
-            border-color: #1877F2;
-        }
-
-        /* Mobile specific adjustments */
         @media (max-width: 768px) {
             .fixed-social-icons {
                 right: 15px;
@@ -1751,39 +1743,47 @@
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
         </a>
+        <a href="https://wa.me/212XXXXXXXXX" target="_blank" title="WhatsApp"
+                class="w-12 h-12 rounded-full text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 shadow-xl shadow-green-500/40 transition-all duration-300 group animate-slide-in-3 relative overflow-hidden bg-whatsapp-gradient">
+                <div class="absolute inset-0 bg-white/10 rounded-full opacity-0 duration-300"></div>
+                <svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488" />
+                </svg>
+              </a>
   </div>
 
-  <img src="images/loader.gif" alt="" id="load">
+  <img loading="lazy" src="images/loader.gif" alt="" id="load">
   <div id="temps"></div>
 
   <div id="btmenu"><i id="b1"></i><b></b><i id="b2"></i><b></b><i id="b3"></i><b></b></div>
 
   <div id="intro" style="padding-bottom: 0px;">
-    <a href="/" id="logo"><img src="images/verlia-logo-blanc.png"
+    <a href="/" id="logo"><img loading="lazy" src="images/verlia-logo-blanc.png"
         alt="Verlia immobilier, promoteur haut standing Casablanca" style="max-width: 100px; height: auto;"></a>
 
     <ul id="menu" class="Mblanc">
+      <li><a href="index.html" class="lieninterieur"><span>Accueil<i></i></span></a></li>
       <li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
-      <li><a href="description.html#equipements" class="lieninterieur"><span>Gestion<i></i></span></a></li>
-      <li><a href="description.html#estime"><span>Estimer<i></i></span></a></li>
+      <li><a href="description.html#estime"><span>Organiser une visite<i></i></span></a></li>
       <li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
     </ul>
 
     <h1 id="agence-immo">
-      <span>Studios Haut Standing à L'Hermitage</span><br>
+      <span>Studio 58 m² – L’Hermitage</span><br>
       <span><a href="description.html#prix" class="lieninterieur lienAGI">À partir de 1.000.000 DHS<i></i></a> &nbsp; <a
           href="description.html#presentation" class="lieninterieur lienAGI">Titres Fonciers<i></i></a></span> <br>
-      <span class="agenceimmoPlus"><a href="description.html#caracteristiques"
+      <!-- <span class="agenceimmoPlus"><a href="description.html#caracteristiques"
           class="lieninterieur lienAGIplus">L'élégance</a> <strong class="puce">•</strong> <a
           href="description.html#equipements" class="lienAGIplus">Le confort</a> <strong class="puce">•</strong> <a
-          href="description.html#contact" class="lienAGIplus">La sécurité</a></span>
+          href="description.html#contact" class="lienAGIplus">La sécurité</a></span> -->
     </h1>
     <div id="accesbas"><a href="description.html#presentation" class="lieninterieur">
-        <div class="carre"><img src="images/flbas.png" alt=""><img src="images/flbas.png" alt=""></div>
-        <span>Découvrir L'Hermitage</span>
+        <div class="carre"><img loading="lazy" src="images/flbas.png" alt=""><img loading="lazy" src="images/flbas.png" alt=""></div>
+        <span>Découvrez les détails, le plan et les finitions de ce modèle unique</span>
       </a></div>
 
-    <img id="video" src="images/Verlia1.jpeg" alt="Verlia - Studios haut standing L'Hermitage Casablanca"
+    <img loading="lazy" id="video" src="images/verlia11.jpeg" alt="Verlia - Studios haut standing L'Hermitage Casablanca"
       class="video-image">
     <div id="cover"></div>
   </div>
@@ -1796,18 +1796,18 @@
         <span class="close" onclick="closeModal()">&times;</span>
       </div>
       <div class="modal-body">
-        <img id="modalImage" src="/placeholder.svg" alt="Plan studio L'Hermitage">
+        <img loading="lazy" id="modalImage" src="/placeholder.svg" alt="Plan studio L'Hermitage">
       </div>
     </div>
   </div>
 
   <div id="navigation">
-    <a href="/" id="logonav"><img src="images/verlia-logo-blanc.png" alt="Verlia immobilier, promoteur Casablanca"
+    <a href="/" id="logonav"><img loading="lazy" src="images/verlia-logo-blanc.png" alt="Verlia immobilier, promoteur Casablanca"
         style="max-width: 180px; height: auto;"></a>
     <div id="navG" class="navGl1">
-			<img src="images/WhatsApp Image 2025-08-28 at 16.23.18.jpeg" alt="Verlia L'Hermitage - Studios haut standing Anoual">
-			<img src="images/Verlia7.jpeg" alt="Verlia L'Hermitage - Plans 3D studios">
-			<img src="images/WhatsApp Image 2025-08-28 at 16.21.43 (1).jpeg" alt="Verlia L'Hermitage - Visualisation 3D">
+			<img loading="lazy" src="images/WhatsApp Image 2025-08-28 at 16.23.18.jpeg" alt="Verlia L'Hermitage - Studios haut standing Anoual">
+			<img loading="lazy" src="images/Verlia7.jpeg" alt="Verlia L'Hermitage - Plans 3D studios">
+			<img loading="lazy" src="images/WhatsApp Image 2025-08-28 at 16.21.43 (1).jpeg" alt="Verlia L'Hermitage - Visualisation 3D">
 		</div>
     <div id="navD">
       <div id="navD1">
@@ -1841,10 +1841,10 @@
           <li><a href="temoignages.php">Témoignages clients<i></i></a></li>
         </ul>
 
-        <a class="reseaux" href="https://www.instagram.com/verlia.ma/" target="_blank"><img src="images/instagram.png"
+        <!-- <a class="reseaux" href="https://www.instagram.com/verlia.ma/" target="_blank"><img loading="lazy" src="images/instagram.png"
             alt="Instagram Verlia"></a>
-        <a class="reseaux" href="https://www.facebook.com/verlia.ma/" target="_blank"><img src="images/Facebook.png"
-            alt="Facebook Verlia"></a>
+        <a class="reseaux" href="https://www.facebook.com/verlia.ma/" target="_blank"><img loading="lazy" src="images/Facebook.png"
+            alt="Facebook Verlia"></a> -->
       </div>
       <div class="ret"></div>
       <a id="mentions" href="mentions-legales-site-internet.php">Mentions légales - Verlia 2025</a>
@@ -1854,7 +1854,7 @@
   </div>
 
 
-  <div id="remonte"><img src="images/remonter.png" alt=""></div>
+  <div id="remonte"><img loading="lazy" src="images/remonter.png" alt=""></div>
 
   <div id="MOB"></div>
   <div id="MOB2"></div>
@@ -1867,7 +1867,7 @@
 
   </div>
 
-  <a href="/" id="logo"><img src="images/verlia-logo-blanc.png"
+  <a href="/" id="logo"><img loading="lazy" src="images/verlia-logo-blanc.png"
       alt="Verlia immobilier, promoteur haut standing Casablanca" style="max-width: 100px; height: auto;"></a>
 
 
@@ -1882,7 +1882,7 @@
         <div class="three-columns">
           <div class="column">
             <div class="column-image">
-              <img src="/images/imgs003.jpeg" alt="Caractéristiques principales" />
+              <img loading="lazy" src="/images/imgs003.jpeg" alt="Caractéristiques principales" />
             </div>
             <div class="column-content">
               <h3 class="column-title">CARACTÉRISTIQUES PRINCIPALES</h3>
@@ -1901,7 +1901,7 @@
 
           <div class="column">
             <div class="column-image">
-              <img src="/images/imgs002.jpeg" alt="Finitions et matériaux" />
+              <img loading="lazy" src="/images/imgs002.jpeg" alt="Finitions et matériaux" />
             </div>
             <div class="column-content">
               <h3 class="column-title">FINITIONS ET MATÉRIAUX</h3>
@@ -1920,7 +1920,7 @@
 
           <div class="column">
             <div class="column-image">
-              <img src="/images/imgs005.jpeg" alt="Emplacement privilégié" />
+              <img loading="lazy" src="/images/imgs005.jpeg" alt="Emplacement privilégié" />
             </div>
             <div class="column-content">
               <h3 class="column-title" id="emplacement">EMPLACEMENT PRIVILÉGIÉ</h3>
@@ -1940,7 +1940,7 @@
     </section>
   <section class="floor-plans-section" style="background: #F4F3EA; padding: 8rem 0;">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header" id="estime">
           <h2 class="section-title">Plans et Configurations</h2>
           <p class="section-subtitle">DÉCOUVREZ NOS DIFFÉRENTS MODÈLES DE STUDIOS</p>
         </div>
@@ -1950,7 +1950,7 @@
         
         <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
           <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
-            <img src="/images/plan1.jpeg" alt="Plan Studio 58m2 - L'Hermitage" 
+            <img loading="lazy" src="/images/plan1.jpeg" alt="Plan Studio 58m2 - L'Hermitage" 
                  style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
             <div class="plan-overlay" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
               <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">S 01</div>
@@ -2040,7 +2040,7 @@
             </div>
           </div>
           <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
-            <img src="/images/plan2.jpeg" alt="Plan Studio 53m2 Duplex - L'Hermitage" 
+            <img loading="lazy" src="/images/plan2.jpeg" alt="Plan Studio 53m2 Duplex - L'Hermitage" 
                  style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
             <div class="plan-overlay" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
               <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">S 02</div>
@@ -2052,7 +2052,7 @@
         <!-- Plan 3 - 58m2 avec parking 13m2 -->
         <div class="plan-item" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
           <div class="plan-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
-            <img src="/images/plan3.jpeg" alt="Plan Studio 58m2 Premium - L'Hermitage" 
+            <img loading="lazy" src="/images/plan3.jpeg" alt="Plan Studio 58m2 Premium - L'Hermitage" 
                  style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.3s ease;">
             <div class="plan-overlay" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1rem 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
               <div style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">S 03</div>
@@ -2106,7 +2106,7 @@
   </div>
 </section>
     <!-- Detailed Features Section -->
-    <section class="detailed-features">
+    <section class="detailed-features" style="margin-top: -50px;">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Un projet d'exception à L'Hermitage</h2>
@@ -2145,7 +2145,7 @@
       </div>
     </section>
 
-    <section class="equipment-section" id="equipements">
+    <section class="equipment-section" id="equipements" style="margin-top: -80px;">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Équipements et Services</h2>
@@ -2170,13 +2170,13 @@
 
           <div class="equipment-item">
             <div class="equipment-image">
-              <img src="/images/clima.jpeg" alt="Technologie intégrée" />
+              <img loading="lazy" src="/images/clima.jpeg" alt="Technologie intégrée" />
             </div>
           </div>
 
           <div class="equipment-item">
             <div class="equipment-image">
-              <img src="/images/securisation.jpeg" alt="Sécurité premium" />
+              <img loading="lazy" src="/images/securisation.jpeg" alt="Sécurité premium" />
             </div>
           </div>
 
@@ -2198,20 +2198,88 @@
       </div>
     </section>
 
-    <section class="gallery-section">
+    <!-- <section class="gallery-section">
       <div class="container2">
         <div class="section-header">
           <h2 class="section-title" id="estime">L'Hermitage en images</h2>
           <p class="section-subtitle">STUDIOS PREMIUM AVEC FINITIONS HAUT DE GAMME</p>
         </div>
         <div class="gallery-grid">
-          <img src="images/Plan_01_3d_.png" alt="Verlia L'Hermitage - Façade moderne sans vis-à-vis" loading="lazy">
-          <img src="images/Plan_02_3d.png" alt="Verlia L'Hermitage - Studio lumineux et fonctionnel" loading="lazy">
-          <img src="images/Verlia3.jpeg" alt="Verlia L'Hermitage - Cuisine italienne équipée trio" loading="lazy">
-          <img src="images/verlia11.jpeg" alt="Verlia L'Hermitage - Salle de bain marbre Ibiza" loading="lazy">
-          <img src="images/Verlia5.jpeg" alt="Verlia L'Hermitage - Parquet soigné et portes noyer" loading="lazy">
-          <img src="images/Verlia6.jpeg" alt="Verlia L'Hermitage - Finitions premium et matériaux nobles"
+          <img loading="lazy" src="images/Plan_01_3d_.png" alt="Verlia L'Hermitage - Façade moderne sans vis-à-vis" loading="lazy">
+          <img loading="lazy" src="images/Plan_02_3d.png" alt="Verlia L'Hermitage - Studio lumineux et fonctionnel" loading="lazy">
+          <img loading="lazy" src="images/Verlia3.jpeg" alt="Verlia L'Hermitage - Cuisine italienne équipée trio" loading="lazy">
+          <img loading="lazy" src="images/verlia11.jpeg" alt="Verlia L'Hermitage - Salle de bain marbre Ibiza" loading="lazy">
+          <img loading="lazy" src="images/Verlia5.jpeg" alt="Verlia L'Hermitage - Parquet soigné et portes noyer" loading="lazy">
+          <img loading="lazy" src="images/Verlia6.jpeg" alt="Verlia L'Hermitage - Finitions premium et matériaux nobles"
             loading="lazy">
+        </div>
+      </div>
+    </section> -->
+<!-- Location and Accessibility Section -->
+    <section class="location-section" style="background: #F4F3EA; padding: 8rem 0; margin-top: -130px;">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Un Emplacement Stratégique</h2>
+          <p class="section-subtitle">AU CŒUR DU QUARTIER ANOUAL</p>
+        </div>
+
+        <div class="location-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem;">
+          <div class="location-image" style="position: relative; overflow: hidden; border-radius: 12px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);">
+            <img src="images/locaton2.png" alt="Localisation L'Hermitage - Quartier Anoual Casablanca" 
+                 style="width: 100%; height: 500px; object-fit: cover;" loading="lazy">
+            <div class="location-overlay" style="position: absolute; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(102, 126, 234, 0.2);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: #2c3e50; margin-bottom: 0.5rem;">L'Hermitage</div>
+              <div style="font-size: 0.9rem; color: #666;">Quartier Anoual</div>
+            </div>
+          </div>
+
+          <div class="location-details">
+            <div class="location-header" style="margin-bottom: 2rem;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #2c3e50; margin-bottom: 0.5rem; font-weight: 500;">Proximité et Commodités</h3>
+              <p style="color: #667eea; font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem;">Un quartier recherché avec tous les services à portée de main</p>
+              <div style="width: 60px; height: 2px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 2rem;"></div>
+            </div>
+
+            <div class="location-features">
+              <div class="proximity-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="proximity-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                  <div style="font-size: 1.5rem; font-weight: 600; color: #e74c3c; margin-bottom: 0.5rem;">5 min</div>
+                  <div style="font-size: 0.9rem; color: #666;">Clinique Anoual</div>
+                </div>
+                <div class="proximity-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                  <div style="font-size: 1.5rem; font-weight: 600; color: #e74c3c; margin-bottom: 0.5rem;">3 min</div>
+                  <div style="font-size: 0.9rem; color: #666;">Boulevard Anoual</div>
+                </div>
+                <div class="proximity-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                  <div style="font-size: 1.5rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">8 min</div>
+                  <div style="font-size: 0.9rem; color: #666;">Station Tramway</div>
+                </div>
+                <div class="proximity-item" style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); text-align: center;">
+                  <div style="font-size: 1.5rem; font-weight: 600; color: #667eea; margin-bottom: 0.5rem;">10 min</div>
+                  <div style="font-size: 0.9rem; color: #666;">Centre-ville</div>
+                </div>
+              </div>
+
+              <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Services médicaux</strong> - Cliniques et cabinets spécialisés à proximité
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Transport public</strong> - Tramway et bus facilement accessibles
+                </li>
+                <li style="padding: 0.8rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Commerces de proximité</strong> - Restaurants, pharmacies, supermarchés
+                </li>
+                <li style="padding: 0.8rem 0; color: #555; position: relative; padding-left: 2rem;">
+                  <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                  <strong>Accès rapide</strong> - Connexions vers tous les quartiers de Casablanca
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2365,7 +2433,7 @@
           <!-- Brand Section -->
           <div class="lg:col-span-1 lg:pr-8">
             <div class="mb-6">
-              <img src="images/verlia-logo-blanc.png" alt="Verlia immobilier, promoteur Casablanca"
+              <img loading="lazy" src="images/verlia-logo-blanc.png" alt="Verlia immobilier, promoteur Casablanca"
                 class="h-12 w-auto filter brightness-0 invert">
             </div>
             <p class="text-white/80 text-sm leading-relaxed mb-8">
@@ -2388,6 +2456,13 @@
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+              <a href="https://wa.me/212XXXXXXXXX" target="_blank" title="WhatsApp"
+                class="w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488" />
                 </svg>
               </a>
             </div>
@@ -2549,7 +2624,7 @@
           </div>
         </div>
     </footer>
-    <div id="remonte"><img src="images/remonter.png" alt=""></div>
+    <div id="remonte"><img loading="lazy" src="images/remonter.png" alt=""></div>
 
     <script src="js/LIB2021.js"></script>
     <script src="js/Comportements-v17.js"></script>

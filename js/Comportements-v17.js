@@ -1016,64 +1016,87 @@ function GLOBAL() {
             gsap.set(tS, {
                 x: -605,
                 opacity: 0
-            }), $(tV).mouseenter(function() {
+            }), 
+            $(tV).mouseenter(function() {
                 var t = $(this).find(".surv");
                 gsap.set(t[0], {
                     x: -605,
                     opacity: 1
-                }), gsap.to(t[0], {
+                });
+                gsap.to(t[0], {
                     x: 0,
                     opacity: 0,
                     duration: 1.3,
                     ease: "power4.out"
                 });
+                
                 var o = $(this).find(".titreBint");
                 gsap.to(o[0], {
                     paddingLeft: tH + 15,
                     duration: .7,
                     ease: "power4.out"
                 });
+                
                 var e = $(this).find(".imagessect img");
-                if (gsap.to(e, {
-                        scale: 1.25,
-                        ease: "power2.out",
-                        rotationZ: 0,
-                        force3D: !1,
-                        duration: .8
-                    }), null != $(this).find(".secttype")[0] && void 0 != $(this).find(".secttype")[0]) {
-                    var a = $(this).find(".secttype");
-                    gsap.to(a[0], {
+                gsap.to(e, {
+                    scale: 1.25,
+                    ease: "power2.out",
+                    rotationZ: 0,
+                    force3D: !1,
+                    duration: .8
+                });
+                
+                // Show secttype on hover
+                var secttype = $(this).find(".secttype");
+                if (secttype.length > 0) {
+                    gsap.to(secttype[0], {
+                        autoAlpha: 1,
+                        duration: .7,
+                        ease: "power4.out"
+                    });
+                    gsap.to(secttype[0], {
                         paddingLeft: 15,
                         duration: .7,
                         ease: "power4.out"
-                    })
-                }
-            }), $(tV).mouseleave(function() {
-                var t = $(this).find(".titreBint");
-                gsap.to(t[0], {
-                    paddingLeft: tH,
-                    duration: .7,
-                    ease: "power4.out"
-                });
-                var o = $(this).find(".imagessect img");
-                if (gsap.to(o, {
-                        scale: 1,
-                        ease: "power2.out",
-                        rotationZ: 0,
-                        force3D: !1,
-                        duration: .8
-                    }), null != $(this).find(".secttype")[0] && void 0 != $(this).find(".secttype")[0]) {
-                    var e = $(this).find(".secttype");
-                    gsap.to(e[0], {
-                        paddingLeft: 0,
-                        duration: .7,
-                        ease: "power4.out"
-                    })
+                    });
                 }
             });
+            //LL
+             $(tV).mouseleave(function() {
+    var t = $(this).find(".titreBint");
+    gsap.to(t[0], {
+        paddingLeft: tH,
+        duration: .7,
+        ease: "power4.out"
+    });
+    
+    var o = $(this).find(".imagessect img");
+    gsap.to(o, {
+        scale: 1,
+        ease: "power2.out",
+        rotationZ: 0,
+        force3D: !1,
+        duration: .8
+    });
+    
+    // Hide secttype on mouse leave
+    var secttype = $(this).find(".secttype");
+    if (secttype.length > 0) {
+        gsap.to(secttype[0], {
+            autoAlpha: 0,
+            duration: .7,
+            ease: "power4.out"
+        });
+        gsap.to(secttype[0], {
+            paddingLeft: 0,
+            duration: .7,
+            ease: "power4.out"
+        });
+    }
+});
             var tO = 0;
             $(tV[0]).click(function() {
-                var t = $(this).find(".secttype");
+            var t = $(this).find(".secttype");
                 0 == tO ? (gsap.to(t[0], {
                     autoAlpha: 1,
                     duration: .7,
@@ -1084,6 +1107,7 @@ function GLOBAL() {
                     ease: "power4.out"
                 }), tO = 0)
             });
+
             var tM = 0;
             $(tV[1]).click(function() {
                 var t = $(this).find(".secttype");

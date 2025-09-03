@@ -1208,6 +1208,23 @@ sup {
 .H .secteur .secttype {
   visibility: hidden;
 }
+.secttype ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.secttype ul li a {
+    display: flex;               /* pour aligner texte + icône */
+    justify-content: space-between; /* espace entre texte et flèche */
+    align-items: center;
+    width: 100%;                 /* prend toute la largeur dispo */
+    box-sizing: border-box;       /* évite dépassement */
+    text-decoration: none;
+    color: inherit;
+    padding: 8px 12px;           /* adapte selon ton design */
+    white-space: nowrap;         /* empêche retour à la ligne (optionnel) */
+}
 
 /* loc */
 .titreBLouer {

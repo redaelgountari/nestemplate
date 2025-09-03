@@ -155,18 +155,30 @@
 		}
 
 		.custom-images-row {
-			display: flex;
-			gap: 15px;
-			margin-top: 15px;
-		}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* allows wrapping on small screens */
+}
 
-		.custom-images-row img {
-			width: calc(33.333% - 10px);
-			height: 120px;
-			object-fit: cover;
-			border-radius: 6px;
-		}
+.custom-images-row img {
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+@media (max-width: 600px) {
+    .custom-images-row {
+        flex-direction: column;
+        gap: 15px;
+    }
 
+    .custom-images-row img {
+        max-width: 80%;   /* scale nicely on mobile */
+    }
+}
 		/* Dark section styling */
 		.custom-section-dark {
 			background-color: #F5F1EB;
@@ -436,19 +448,33 @@
             flex-direction: column;
             gap: 15px;
             z-index: 1000;
-            /* Removed the media query hiding - now always visible */
         }
 
-        .fixed-social-icons a {
+        .fixed-social-icons a.instagram {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.95);
+            background: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
             border: 2px solid rgba(102, 126, 234, 0.2);
-            color: #667eea;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+        .fixed-social-icons a.facebook {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1877F2;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            color: white;
             font-size: 20px;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -456,28 +482,6 @@
             backdrop-filter: blur(8px);
         }
 
-        .fixed-social-icons a:hover {
-            transform: scale(1.1);
-            background: #ffffff;
-            border-color: rgba(102, 126, 234, 0.4);
-            color: #5a67d8;
-            /* No shadow on hover either */
-        }
-
-        /* Specific hover colors for each platform */
-        .fixed-social-icons a.instagram:hover {
-            background: linear-gradient(135deg, #E4405F 0%, #833AB4 50%, #F77737 100%);
-            color: white;
-            border-color: #E4405F;
-        }
-
-        .fixed-social-icons a.facebook:hover {
-            background: #1877F2;
-            color: white;
-            border-color: #1877F2;
-        }
-
-        /* Mobile specific adjustments */
         @media (max-width: 768px) {
             .fixed-social-icons {
                 right: 15px;
@@ -512,6 +516,59 @@
             border-radius: 12px;
             border: 1px solid #e2e8f0;
         }
+		.fondgris { background-color: #f5f5f5; }
+        .coulnoir { color: #333; }
+        .trait::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+            margin: 10px 0;
+        }
+        
+        /* Carousel transition */
+        .carousel-container {
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        /* Custom button styles */
+        .carousel-btn {
+            background: rgba(0,0,0,0.7);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(0,0,0,0.9);
+        }
+        
+        .carousel-btn:disabled {
+            background: rgba(0,0,0,0.3);
+            cursor: not-allowed;
+        }
+        
+        /* Dots indicator */
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #d4af37;
+        }
 	</style>
 </head>
 
@@ -537,6 +594,14 @@
 					<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
 				</svg>
 			</a>
+			<a href="https://wa.me/212XXXXXXXXX" target="_blank" title="WhatsApp"
+				class="w-12 h-12 rounded-full text-verlia-cream flex items-center justify-center text-2xl shadow-lg shadow-verlia-blue/25 shadow-xl shadow-green-500/40 transition-all duration-300 group animate-slide-in-3 relative overflow-hidden bg-whatsapp-gradient">
+				<div class="absolute inset-0 bg-white/10 rounded-full opacity-0 duration-300"></div>
+				<svg style="color: white;" class="w-6 h-6 relative z-10" viewBox="0 0 24 24" fill="currentColor">
+					<path
+					d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488" />
+				</svg>
+			</a>
 	</div>
 	<div id="btmenu"><i id="b1"></i><b></b><i id="b2"></i><b></b><i id="b3"></i><b></b></div>
 
@@ -547,15 +612,14 @@
 
 		<ul id="menu" class="Mblanc">
 			<li><a href="description.html#caracteristiques" class="lieninterieur"><span>Nos projets<i></i></span></a></li>
-			<li><a href="description.html#equipements" class="lieninterieur"><span>Gestion<i></i></span></a></li>
-			<li><a href="description.html#estime"><span>Estimer<i></i></span></a></li>
+			<li><a href="description.html#estime"><span>Organiser une visite<i></i></span></a></li>
 			<li><a href="description.html#contact" class="lieninterieur"><span>Contact<i></i></span></a></li>
 		</ul>
 
 		<h1 id="agence-immo">
 			<span>Studios Haut Standing à L'Hermitage</span><br>
 			<span><a href="description.html#prix" class="lieninterieur lienAGI">À partir de 1.000.000 DHS<i></i></a> &nbsp; <a
-					href="description.html#presentation" class="lieninterieur lienAGI">Titres Fonciers<i></i></a></span> <br>
+					href="description.html#presentation" class="lieninterieur lienAGI">Titres Fonciers Disponible<i></i></a></span> <br>
 			<span class="agenceimmoPlus"><a href="description.html#caracteristiques" class="lieninterieur lienAGIplus">L'élégance</a> <strong
 					class="puce">•</strong> <a href="description.html#equipements"
 					class="lienAGIplus">Le confort</a> <strong
@@ -564,7 +628,7 @@
 		</h1>
 		<div id="accesbas"><a href="description.html#presentation" class="lieninterieur">
 				<div class="carre"><img src="images/flbas.png" alt=""><img src="images/flbas.png" alt=""></div>
-				<span>Découvrir L'Hermitage</span>
+				<span>Découvrir Verlia L'Hermitage</span>
 			</a></div>
 
 		<img id="video" src="images/Verlia1.jpeg" alt="Verlia - Studios haut standing L'Hermitage Casablanca"
@@ -572,20 +636,20 @@
 		<div id="cover"></div>
 	</div>
 
-	<div class="paddH13 fondbeige ano0 paddB7">
+	<div class="paddH13 fondbeige ano0 paddB7" style="margin-top: -80px;">
 		<div class="titreA paddH2 anc1" id="nos-biens">
 			<h2 class="titreAint coulnoir"><strong>Un projet d'exception pensé pour vous</strong><i class="trait"></i><span>Situé au cœur du quartier Anoual à Casablanca</span></h2>
 		</div>
 
 		<div class="ext4 anc2">
-			<div id="saint-marcellin" class="secteur paddH6">
-				<div class="titreB margH6" style="margin-left: -50px;">
-					<h2 class="titreBint"><strong>Caractéristiques Principales</strong><span>Ce qui fait la différence</span>
+			<div id="saint-marcellin" class="secteur paddH6" >
+				<div class="titreB margH6" style="padding: 15px;" >
+					<h2 ><strong>Caractéristiques Principales</strong><span>Ce qui fait la différence</span>
 						<img class="surv" src="images/surv.gif" alt="">
 					</h2>
 				</div>
 
-				<div class="secttype margH6">
+				<div class="secttype margH6" style="overflow: hidden" >
 					<ul>
 						<li><a href="description.html#cuisine">Cuisine italienne équipée <img src="images/fl2.png"
 									alt=""></a></li>
@@ -627,7 +691,7 @@
 									alt=""></a></li>
 						<li><a href="description.html#noyer">Portes en noyer massif <img src="images/fl2.png"
 									alt=""></a></li>
-						<li><a href="description.html#isolation">Isolation renforcée <img src="images/edited.jpeg"
+						<li><a href="description.html#isolation">Isolation phonique et thermique <img src="images/fl2.png"
 									alt=""></a></li>
 					</ul>
 				</div>
@@ -642,13 +706,25 @@
 				</div>
 			</div>
 
-			<a href="description.html#emplacement" id="autresregions" class="secteur paddH6">
+			<div id="autresregions" class="secteur paddH6" >
 				<div class="titreB margH6">
 					<h2 class="titreBint"><strong>Emplacement Privilégié</strong><span>Immeuble sans vis-à-vis / Quartier Anoual</span>
 						<img class="surv" src="images/surv.gif" alt="">
 					</h2>
 				</div>
-
+				<div class="secttype margH6" style="margin-top: 74%;">
+					<ul>
+						<li><a href="description.html#marbre">Quartier résidentiel calme<img src="images/fl2.png"
+									alt=""></a></li>
+						<li><a href="description.html#parquet">sans vis-à-vis pour plus d’intimité <img
+									src="images/fl2.png" alt=""></a></li>
+						<li><a href="description.html#menuiserie">Menuiserie aluminium Stregale <img src="images/fl2.png"
+									alt=""></a></li>
+									alt=""></a></li>
+						<li><a href="description.html#isolation">aux grands axes de Casablanca <img src="images/fl2.png"
+									alt=""></a></li>
+					</ul>
+				</div>
 				<div class="imagessect">
 					<img src="images/Design sans titre (1).png"
 						alt="Verlia L'Hermitage - Emplacement privilégié quartier Anoual Casablanca" class="prem">
@@ -657,7 +733,7 @@
 					<img src="images/Design sans titre.png"
 						alt="Verlia L'Hermitage - Luminosité naturelle optimale">
 				</div>
-			</a>
+			</div>
 
 			<div class="ret"></div>
 		</div>
@@ -671,19 +747,19 @@
 		<div class="ext1 anc2Louer">
 			<a id="location" class="secteurLouer paddH6" href="description.html#equipements">
 				<div class="titreBLouer margH6">
-					<div class="titreBintLouer"><strong>Technologie Intégrée</strong><span>Fibre optique et domotique</span>
+					<div class="titreBintLouer"><strong>Cuisine italienne équipée</strong><span>Trio (four ,plaque, hotte)</span>
 						<img class="survLouer" src="images/surv.gif" alt="">
 					</div>
 				</div>
 				<div class="imagessectLouer">
 					<!-- <img src="images/tech (1).jpeg" alt="Verlia L'Hermitage - Fibre optique et connexion haut débit"> -->
-					<img src="images/tech (3).jpeg" alt="Verlia L'Hermitage - Fibre optique et connexion haut débit">
+					<img src="images/cuisignequipe.jpeg" alt="Verlia L'Hermitage - Fibre optique et connexion haut débit">
 				</div>
 			</a>
 
 			<a id="gestion" class="secteurLouer paddH6" href="description.html#securite">
 				<div class="titreBLouer margH6">
-					<div class="titreBintLouer"><strong>Sécurité Premium</strong><span>Vidéophone et accès biométrique</span>
+					<div class="titreBintLouer"><strong>Sécurité Premium</strong><span>accès par emprint dijital</span>
 						<img class="survLouer" src="images/surv.gif" alt="">
 					</div>
 				</div>
@@ -698,29 +774,102 @@
 	</div>
 
 	<div class="paddH13 fondgris paddB15 ano0" style="margin-top: -150px;">
-		<div class="titreA paddH2 anc1">
-			<h2 class="titreAint coulnoir"><strong>L'Hermitage en images</strong><i
-					class="trait"></i><span>Studios premium avec finitions haut de gamme</span></h2>
+
+			<div class="fondgris py-8" style="margin-top: -150px; padding-left: 13px; padding-right: 13px; padding-bottom: 15px;">
+        <!-- Title Section -->
+        <div class="titreA paddH2 anc1" id="location-gestion">
+			<h2 class="titreAint coulnoir"><strong>Studios premium avec finitions haut de gamme</strong><i class="trait"></i><span>Technologie et confort moderne</span></h2>
 		</div>
 
-		<div class="ext3 margH6">
-			<ul class="listeVendu">
-				<li class="ans1"><img src="images/Verlia1.jpeg" alt="Verlia L'Hermitage - Façade moderne sans vis-à-vis"></li>
-				<li class="ans1"><img src="images/Verlia2.jpeg" alt="Verlia L'Hermitage - Studio lumineux et fonctionnel"></li>
-				<li class="ans1"><img src="images/Verlia3.jpeg" alt="Verlia L'Hermitage - Cuisine italienne équipée trio"></li>
-				<li class="ans1"><img src="images/Verlia4.jpeg" alt="Verlia L'Hermitage - Salle de bain marbre Ibiza"></li>
-				<li class="ans1"><img src="images/WhatsApp Image 2025-08-28 at 16.23.18.jpeg" alt="Verlia L'Hermitage - Parquet soigné et portes noyer"></li>
-				<li class="ans1"><img src="images/Verlia6.jpeg" alt="Verlia L'Hermitage - Finitions premium et matériaux nobles"></li>
-				<li class="ans1"><img src="images/Verlia7.jpeg" alt="Verlia L'Hermitage - Garage et box privatifs sécurisés"></li>
-				<li class="ans1"><img src="images/Verlia8.jpeg" alt="Verlia L'Hermitage - Hall d'entrée avec vidéophone"></li>
-				<li class="ans1"><img src="images/imgVERLIA.jpeg" alt="Verlia L'Hermitage - Vue d'ensemble projet Anoual"></li>
-			</ul>
-			<div class="ret"></div>
-			<div class="btcentre margH3"><a href="description.html#galerie">Voir toute la galerie L'Hermitage <i></i></a></div>
-		</div>
+        <!-- Carousel Section -->
+        <div class="max-w-6xl mx-auto px-4" style="margin-top: 50px;">
+            <div class="relative overflow-hidden">
+                <!-- Carousel Container -->
+                <div id="carousel" class="carousel-container flex">
+                    <!-- Row 1 -->
+                    <div class="flex-none w-full grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
+                        <div class="relative group">
+                            <img src="images/Verlia1.jpeg" 
+                                 alt="Verlia L'Hermitage - Façade moderne sans vis-à-vis" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <div class="relative group">
+                            <img src="images/Verlia2.jpeg" 
+                                 alt="Verlia L'Hermitage - Studio lumineux et fonctionnel" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <div class="relative group">
+                            <img src="images/Verlia3.jpeg" 
+                                 alt="Verlia L'Hermitage - Cuisine italienne équipée trio" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2 -->
+                    <div class="flex-none w-full grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
+                        <div class="relative group">
+                            <img src="images/Verlia4.jpeg" 
+                                 alt="Verlia L'Hermitage - Salle de bain marbre Ibiza" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <div class="relative group">
+                            <img src="images/WhatsApp Image 2025-08-28 at 16.23.18.jpeg" 
+                                 alt="Verlia L'Hermitage - Parquet soigné et portes noyer" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <div class="relative group">
+                            <img src="images/Verlia6.jpeg" 
+                                 alt="Verlia L'Hermitage - Finitions premium et matériaux nobles" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                    </div>
+                    
+                    <!-- Row 3 -->
+                    <div class="flex-none w-full grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
+                        <div class="relative group">
+                            <img src="images/Verlia7.jpeg" 
+                                 alt="Verlia L'Hermitage - Garage et box privatifs sécurisés" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <div class="relative group">
+                            <img src="images/Verlia8.jpeg" 
+                                 alt="Verlia L'Hermitage - Hall d'entrée avec vidéophone" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                        <div class="relative group">
+                            <img src="images/imgVERLIA.jpeg" 
+                                 alt="Verlia L'Hermitage - Vue d'ensemble projet Anoual" 
+                                 class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prevBtn" class="carousel-btn absolute left-4 top-1/2 transform -translate-y-1/2 z-10">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </button>
+                
+                <button id="nextBtn" class="carousel-btn absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Dots Indicator -->
+            <div class="flex justify-center space-x-2 mt-6">
+                <button class="dot active" onclick="goToSlide(0)"></button>
+                <button class="dot" onclick="goToSlide(1)"></button>
+                <button class="dot" onclick="goToSlide(2)"></button>
+            </div>
+
+        </div>
+    </div>
 	</div>
 
-	<div class="paddH13 fondbeige ano0 paddB15" style="margin-top: -200px;">
+	<div class="paddH13 fondbeige ano0 paddB15" style="margin-top: -190px;">
 		<div class="titreA paddH2 anc1" id="garanties">
 			<h2 class="titreAint coulnoir"><strong>Garanties et Service Client</strong><i class="trait"></i><span>Votre tranquillité d'esprit, notre priorité</span></h2>
 		</div>
@@ -728,16 +877,16 @@
 		<div class="ext2 margH4">
 			<div class="bloctexteA T1 ano0">
 				<p>Verlia s'engage à vos côtés bien au-delà de la livraison. Notre service après-vente assure un suivi complet avec garanties étendues, maintenance préventive et assistance technique. Une équipe dédiée reste à votre disposition pour tous vos besoins, garantissant la pérennité de votre investissement.</p>
-				<a href="description.html#service" class="btsimple">Notre service client <img src="images/surv.gif" alt="" class="surv"></a>
+				<!-- <a href="description.html#service" class="btsimple">Notre service client <img src="images/surv.gif" alt="" class="surv"></a> -->
 			</div>
 			<div class="bloctexteA T2 ano0">
 				<p>Bénéficiez de garanties complètes : décennale, biennale et parfait achèvement. Maintenance des équipements, assistance juridique et accompagnement locatif inclus. Notre engagement qualité se traduit par des certifications reconnues et un taux de satisfaction client de 98%.</p>
-				<a href="description.html#garanties" class="btsimple">Découvrir nos garanties <img src="images/surv.gif" alt="" class="surv"></a>
+				<!-- <a href="description.html#garanties" class="btsimple">Découvrir nos garanties <img src="images/surv.gif" alt="" class="surv"></a> -->
 			</div>
 			<div class="ret"></div>
 		</div>
 
-		<div class="ext3 margH6">
+		<!-- <div class="ext3 margH6">
 			<ul class="listeVendu">
 				<li class="ans1"><img src="images/toill.jpeg" alt="Verlia - Service après-vente professionnel"></li>
 				<li class="ans1"><img src="images/WhatsApp Image 2025-08-28 at 16.23.16.jpeg" alt="Verlia - Garanties étendues et maintenance"></li>
@@ -745,24 +894,23 @@
 			</ul>
 			<div class="ret"></div>
 			<div class="btcentre margH3"><a href="description.html#contact">Contacter notre service client <i></i></a></div>
-		</div>
+		</div> -->
 	</div>
 
 	<!-- Adding custom section about development process -->
-	<div class="custom-section-light">
+	<div class="custom-section-light" style="margin-top: -150px;">
 		<div class="custom-container">
 			<div class="custom-title-section">
-				<h2 class="custom-main-title">
-					<strong>Processus de Développement</strong>
-					<span class="custom-title-line"></span>
-					<span class="custom-subtitle">Excellence technique et suivi rigoureux</span>
-				</h2>
+
+				<div class="titreA paddH2 anc1" id="garanties">
+					<h2 class="titreAint coulnoir"><strong>Processus de Développement</strong><i class="trait"></i><span>Excellence technique et suivi rigoureux</span></h2>
+				</div>
 			</div>
 
 			<div class="custom-content-grid">
 				<div class="custom-content-block">
 					<div class="custom-block-title">
-						<h3><strong>Conception Architecturale</strong></h3>
+						<h3><strong>Conception Architectural</strong></h3>
 						<span>Design moderne et fonctionnel</span>
 					</div>
 					
@@ -777,9 +925,9 @@
 					</div>
 
 					<div class="custom-images-row">
-						<img src="images/images (1).jpg" alt="Verlia - Conception architecturale moderne">
-						<img src="images/WhatsApp Image 2025-08-28 at 16.21.23 (1).jpeg">
-						<img src="images/tech (1).jpeg" alt="Verlia - Modélisation 3D précise">
+						<img src="images/qc.jpg" alt="Verlia - quality verrification">
+						<img src="images/iso.png" alt="Verlia - certifiés iso">
+						<img src="images/guranty.jpg" alt="Verlia - Modélisation 3D précise">
 					</div>
 				</div>
 
@@ -800,9 +948,9 @@
 					</div>
 
 					<div class="custom-images-row">
-						<img src="images/tech (3).jpeg" alt="Verlia - Contrôle qualité construction">
-						<img src="images/WhatsApp Image 2025-08-28 at 16.23.08.jpeg" alt="Verlia - Matériaux premium certifiés">
-						<img src="images/Verlia7.jpeg" alt="Verlia - Finitions haut de gamme">
+						<img src="images/plan1.jpeg" alt="Verlia - Contrôle qualité construction">
+						<img src="images/plan2.jpeg" alt="Verlia - Matériaux premium certifiés">
+						<img src="images/plan3.jpeg" alt="Verlia - Finitions haut de gamme">
 					</div>
 				</div>
 			</div>
@@ -812,11 +960,9 @@
 	<div class="custom-section-dark">
 		<div class="custom-container">
 			<div class="custom-title-section">
-				<h2 class="custom-main-title-white">
-					<strong>Art de Vivre à L'Hermitage</strong>
-					<span class="custom-title-line-white"></span>
-					<span class="custom-subtitle">Un cadre de vie exceptionnel au quotidien</span>
-				</h2>
+				<div class="titreA paddH2 anc1" id="garanties">
+					<h2 class="titreAint coulnoir"><strong>Art de Vivre à L'Hermitage</strong><i class="trait"></i><span>Un cadre de vie exceptionnel au quotidien</span></h2>
+				</div>
 			</div>
 
 			<div class="custom-lifestyle-content">
@@ -914,6 +1060,13 @@
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+			  <a href="https://wa.me/212XXXXXXXXX" target="_blank" title="WhatsApp"
+                class="w-11 h-11 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transform hover:-translate-y-0.5 transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488" />
                 </svg>
               </a>
             </div>
@@ -1128,10 +1281,10 @@
 					<li><a href="temoignages.php">Témoignages clients<i></i></a></li>
 				</ul>
 
-				<a class="reseaux" href="https://www.instagram.com/verlia.ma/" target="_blank"><img
+				<!-- <a class="reseaux" href="https://www.instagram.com/verlia.ma/" target="_blank"><img
 						src="images/instagram.png" alt="Instagram Verlia"></a>
 				<a class="reseaux" href="https://www.facebook.com/verlia.ma/" target="_blank"><img
-						src="images/Facebook.png" alt="Facebook Verlia"></a>
+						src="images/Facebook.png" alt="Facebook Verlia"></a> -->
 			</div>
 			<div class="ret"></div>
 			<a id="mentions" href="mentions-legales-site-internet.php">Mentions légales - Verlia 2025</a>
@@ -1150,6 +1303,114 @@
 	<div id="testeur"></div>
 	<script src="js/LIB2021.js"></script>
 	<script src="js/Comportements-v17.js"></script>
+	<script>
+        let currentSlide = 0;
+        const totalSlides = 3; // 3 rows of images
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Update button states
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateCarousel();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateCarousel();
+            }
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-play functionality (optional)
+        let autoPlayInterval = setInterval(function() {
+            if (currentSlide < totalSlides - 1) {
+                nextSlide();
+            } else {
+                currentSlide = 0;
+                updateCarousel();
+            }
+        }, 5000); // Change slide every 5 seconds
+
+        // Pause auto-play on hover
+        carousel.addEventListener('mouseenter', function() {
+            clearInterval(autoPlayInterval);
+        });
+
+        carousel.addEventListener('mouseleave', function() {
+            autoPlayInterval = setInterval(function() {
+                if (currentSlide < totalSlides - 1) {
+                    nextSlide();
+                } else {
+                    currentSlide = 0;
+                    updateCarousel();
+                }
+            }, 5000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+
+        carousel.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+
+        carousel.addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
 </body>
 
 </html>
