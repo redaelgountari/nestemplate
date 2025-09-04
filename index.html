@@ -648,6 +648,81 @@
         .dot.active {
             background: #d4af37;
         }
+		 .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            animation: modalZoom 0.3s ease-out;
+        }
+
+        .modal img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 1001;
+        }
+
+        .modal-btn {
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        @keyframes modalZoom {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .clickable-image {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .clickable-image:hover {
+            filter: brightness(1.1);
+        }
 	</style>
 </head>
 
@@ -744,7 +819,7 @@
 				</div>
 
 				<div class="imagessect">
-					<img src="images/WhatsApp Image 2025-08-28 at 16.23.08.jpeg"
+					<img src="images/chambre.png"
 						alt="Verlia L'Hermitage - Studios haut standing avec cuisine équipée" class="prem">
 					<img src="images/Verlia6.jpeg"
 						alt="Verlia L'Hermitage - Finitions premium marbre et parquet">
@@ -756,7 +831,7 @@
 			<div id="luberon" class="secteur paddH6">
 				<div class="titreB margH6">
 					<h2 class="titreBint"><strong>Finitions et Matériaux</strong><span>Matériaux nobles et design moderne</span>
-						<img class="surv" src="images/surv.gif" alt="">
+						<img class="surv" src="images/toil66.jpeg" alt="">
 					</h2>
 				</div>
 
@@ -832,7 +907,7 @@
 				</div>
 				<div class="imagessectLouer">
 					<!-- <img src="images/tech (1).jpeg" alt="Verlia L'Hermitage - Fibre optique et connexion haut débit"> -->
-					<img src="images/cuisignequipe.jpeg" alt="Verlia L'Hermitage - Fibre optique et connexion haut débit">
+					<img src="images/newimage2.jpeg" alt="Verlia L'Hermitage - Fibre optique et connexion haut débit">
 				</div>
 			</a>
 
@@ -906,12 +981,12 @@
                     <!-- Row 3 -->
                     <div class="flex-none w-full grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
                         <div class="relative group">
-                            <img src="images/Verlia7.jpeg" 
+                            <img src="images/toil66.jpeg" 
                                  alt="Verlia L'Hermitage - Garage et box privatifs sécurisés" 
                                  class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
                         </div>
                         <div class="relative group">
-                            <img src="images/Verlia8.jpeg" 
+                            <img src="images/bin2.jpeg" 
                                  alt="Verlia L'Hermitage - Hall d'entrée avec vidéophone" 
                                  class="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105">
                         </div>
@@ -1387,113 +1462,90 @@
 	<div id="testeur"></div>
 	<script src="js/LIB2021.js"></script>
 	<script src="js/Comportements-v17.js"></script>
-	<script>
+	
+    <script>
         let currentSlide = 0;
-        const totalSlides = 3; // 3 rows of images
-        const carousel = document.getElementById('carousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dots = document.querySelectorAll('.dot');
-
+        const totalSlides = 3;
+        
+        // Existing carousel functionality
         function updateCarousel() {
+            const carousel = document.getElementById('carousel');
             carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
             
             // Update dots
-            dots.forEach((dot, index) => {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
-            
-            // Update button states
-            prevBtn.disabled = currentSlide === 0;
-            nextBtn.disabled = currentSlide === totalSlides - 1;
         }
-
-        function nextSlide() {
-            if (currentSlide < totalSlides - 1) {
-                currentSlide++;
-                updateCarousel();
-            }
-        }
-
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateCarousel();
-            }
-        }
-
+        
         function goToSlide(slideIndex) {
             currentSlide = slideIndex;
             updateCarousel();
         }
-
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        // Auto-play functionality (optional)
-        let autoPlayInterval = setInterval(function() {
-            if (currentSlide < totalSlides - 1) {
-                nextSlide();
-            } else {
-                currentSlide = 0;
-                updateCarousel();
-            }
-        }, 5000); // Change slide every 5 seconds
-
-        // Pause auto-play on hover
-        carousel.addEventListener('mouseenter', function() {
-            clearInterval(autoPlayInterval);
-        });
-
-        carousel.addEventListener('mouseleave', function() {
-            autoPlayInterval = setInterval(function() {
-                if (currentSlide < totalSlides - 1) {
-                    nextSlide();
-                } else {
-                    currentSlide = 0;
-                    updateCarousel();
-                }
-            }, 5000);
-        });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') {
-                prevSlide();
-            } else if (e.key === 'ArrowRight') {
-                nextSlide();
-            }
-        });
-
-        // Touch/swipe support for mobile
-        let startX = 0;
-        let endX = 0;
-
-        carousel.addEventListener('touchstart', function(e) {
-            startX = e.touches[0].clientX;
-        });
-
-        carousel.addEventListener('touchend', function(e) {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
         }
-
-        // Initialize carousel
-        updateCarousel();
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        document.getElementById('nextBtn').addEventListener('click', nextSlide);
+        document.getElementById('prevBtn').addEventListener('click', prevSlide);
+        
+        // New modal functionality
+        let currentModalImage = null;
+        
+        function openModal(imgElement) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = imgElement.src;
+            modalImage.alt = imgElement.alt;
+            currentModalImage = imgElement;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            currentModalImage = null;
+        }
+        
+        function downloadImage() {
+            if (!currentModalImage) return;
+            
+            // Create a temporary anchor element to trigger download
+            const link = document.createElement('a');
+            link.href = currentModalImage.src;
+            link.download = currentModalImage.alt || 'verlia-image';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Close modal when clicking outside the image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Auto-slide functionality (optional)
+        setInterval(nextSlide, 5000);
     </script>
 	
 </body>
