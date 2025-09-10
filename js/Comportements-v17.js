@@ -308,7 +308,7 @@ function GLOBAL() {
                     var o = $(this).find("strong");
                     gsap.to(o[0], {
                         y: -10,
-                        color: "#29b2df",
+                        color: "#d4af37",
                         duration: .6
                     });
                     var e = $(this).find("i");
@@ -458,7 +458,7 @@ function GLOBAL() {
                         opacity: .5,
                         duration: .9
                     }), gsap.to(this, {
-                        color: "#bee4f1",
+                        color: "#f4e5a1",
                         letterSpacing: "0.15em",
                         duration: .7,
                         ease: "power4.out"
@@ -481,7 +481,7 @@ function GLOBAL() {
                 var to = $("#agence-immo .lienAGIplus");
                 $(to).mouseenter(function() {
                     gsap.to(this, {
-                        color: "#bee4f1",
+                        color: "#f4e5a1",
                         letterSpacing: "0.17em",
                         duration: .7,
                         ease: "power4.out"
@@ -507,7 +507,7 @@ function GLOBAL() {
                 });
                 var o = $(this).find("span");
                 gsap.to(o, {
-                    color: "#bee4f1",
+                    color: "#f4e5a1",
                     letterSpacing: "0.45em",
                     duration: .6,
                     ease: "power4.out"
@@ -515,7 +515,7 @@ function GLOBAL() {
             }), $(te).mouseleave(function() {
                 var t = $(this).find(".carre");
                 gsap.to(t[0], {
-                    borderColor: "#42b1de",
+                    borderColor: "#b8941f",
                     duration: .6
                 });
                 var o = $(this).find("span");
@@ -579,12 +579,12 @@ function GLOBAL() {
                 gsap.to(t[0], {
                     scaleX: .5,
                     opacity: 1,
-                    backgroundColor: "#42b1de",
+                    backgroundColor: "#b8941f",
                     duration: .4
                 }), gsap.to(t[1], {
                     scaleX: .5,
                     opacity: 1,
-                    backgroundColor: "#42b1de",
+                    backgroundColor: "#b8941f",
                     duration: .5
                 }), gsap.to(t[2], {
                     scaleX: 0,
@@ -618,7 +618,7 @@ function GLOBAL() {
                     opacity: 1,
                     duration: .4
                 }), gsap.to(this, {
-                    borderColor: "#42b1de",
+                    borderColor: "#b8941f",
                     duration: .6
                 });
                 var o = $(this).find("b");
@@ -694,7 +694,7 @@ function GLOBAL() {
                     width: "100%",
                     duration: .8
                 }), gsap.to(this, {
-                    color: "#42b1de",
+                    color: "#b8941f",
                     duration: .6
                 })
             }
@@ -717,8 +717,8 @@ function GLOBAL() {
                 scale: .75,
                 duration: .5
             }), gsap.to(this, {
-                borderColor: "#e7f1f4",
-                backgroundColor: "#e7f1f4",
+                borderColor: "#f9f3e6",
+                backgroundColor: "#f9f3e6",
                 duration: .6
             })
         }), $(tw).mouseleave(function() {
@@ -727,7 +727,7 @@ function GLOBAL() {
                 scale: 1,
                 duration: .5
             }), gsap.to(this, {
-                borderColor: "#29b2df",
+                borderColor: "#d4af37",
                 backgroundColor: "#fff",
                 duration: .6
             })
@@ -800,7 +800,7 @@ function GLOBAL() {
                         force3D: !1,
                         duration: .8
                     }), $(q).addClass("btmactif"), gsap.to(q, {
-                        borderColor: "#42b1de",
+                        borderColor: "#b8941f",
                         duration: .6
                     }), gsap.to(J[0], {
                         scaleX: 0,
@@ -884,7 +884,7 @@ function GLOBAL() {
                     force3D: !1,
                     duration: .5
                 }), gsap.to(q, {
-                    borderColor: "#42b1de",
+                    borderColor: "#b8941f",
                     duration: .7
                 }), gsap.to(J[0], {
                     scaleX: 1,
@@ -1129,7 +1129,7 @@ function GLOBAL() {
                     duration: .4,
                     ease: "power4.out"
                 }), gsap.to(this, {
-                    color: "#29b2df",
+                    color: "#d4af37",
                     marginLeft: 7,
                     duration: .5,
                     ease: "power3.out"
@@ -1298,7 +1298,7 @@ function GLOBAL() {
                 })
             }), $(iy).mouseleave(function() {
                 gsap.to(this, {
-                    borderColor: "#29b2df",
+                    borderColor: "#d4af37",
                     paddingLeft: "1.4em",
                     paddingRight: "1.4em",
                     duration: .56,
@@ -1324,7 +1324,7 @@ function GLOBAL() {
                 var t = $(this).find("i");
                 gsap.set(t[0], {
                     scaleX: 0,
-                    backgroundColor: "#29b2df"
+                    backgroundColor: "#d4af37"
                 }), gsap.to(t[0], {
                     backgroundColor: "#fff",
                     scaleX: 1,
@@ -1343,7 +1343,7 @@ function GLOBAL() {
             var ix = $("#bas a");
             $(ix).mouseenter(function() {
                 gsap.to(this, {
-                    color: "#29b2df",
+                    color: "#d4af37",
                     duration: .7,
                     ease: "power3.out"
                 })
@@ -1363,7 +1363,7 @@ function GLOBAL() {
                     scale: .75,
                     duration: .5
                 }), gsap.to(this, {
-                    borderColor: "#e7f1f4",
+                    borderColor: "#f9f3e6",
                     duration: .6
                 })
             }), $(i2).mouseleave(function() {
@@ -1372,7 +1372,7 @@ function GLOBAL() {
                     scale: 1,
                     duration: .5
                 }), gsap.to(this, {
-                    borderColor: "#29b2df",
+                    borderColor: "#d4af37",
                     duration: .6
                 })
             });
@@ -1552,13 +1552,13 @@ function GLOBAL() {
                     backgroundPosition: "2em 50%"
                 }), $(iP).mouseenter(function() {
                     gsap.to(this, {
-                        backgroundColor: "#385a8d",
+                        backgroundColor: "#b8941f",
                         backgroundPosition: "2.4em 50%",
                         duration: .9
                     })
                 }), $(iP).mouseleave(function() {
                     gsap.to(this, {
-                        backgroundColor: "#72abc5",
+                        backgroundColor: "#d4af37",
                         backgroundPosition: "2em 50%",
                         duration: .9
                     })
@@ -1639,7 +1639,7 @@ function GLOBAL() {
                 $(ot).mouseenter(function() {
                     var t = $(this).find("i");
                     gsap.set(t[0], {
-                        backgroundColor: "#207eb9",
+                        backgroundColor: "#d4af37",
                         scaleX: 0
                     }), gsap.to(t[0], {
                         backgroundColor: "#000",
@@ -1650,7 +1650,7 @@ function GLOBAL() {
                     gsap.set(o[0], {
                         visibility: "visible",
                         opacity: "0",
-                        backgroundColor: "#207eb9",
+                        backgroundColor: "#d4af37",
                         scaleY: 0
                     }), gsap.to(o[0], {
                         backgroundColor: "#fff",
@@ -1658,7 +1658,7 @@ function GLOBAL() {
                         opacity: .7,
                         duration: .4
                     }), gsap.to(this, {
-                        color: "#207eb9",
+                        color: "#d4af37",
                         duration: .6
                     })
                 }), $(ot).mouseleave(function() {
@@ -1682,7 +1682,7 @@ function GLOBAL() {
                         duration: 2.4,
                         ease: "power4.out"
                     }), gsap.set(this, {
-                        color: "#207eb9"
+                        color: "#d4af37"
                     }), gsap.to(this, {
                         color: "#fff",
                         paddingLeft: "2.2em",
@@ -1846,7 +1846,7 @@ function GLOBAL() {
                     $(ot[0]).find("b").text(t);
                     var o = $(ot[0]).find("i");
                     for (gsap.set($(o[0]), {
-                            backgroundColor: "#207eb9",
+                            backgroundColor: "#d4af37",
                             scaleX: 0
                         }), gsap.to($(o[0]), {
                             backgroundColor: "#000",
@@ -1892,7 +1892,7 @@ function GLOBAL() {
                     $(ot[1]).find("b").text(t);
                     var o = $(ot[1]).find("i");
                     for (gsap.set($(o[0]), {
-                            backgroundColor: "#207eb9",
+                            backgroundColor: "#d4af37",
                             scaleX: 0
                         }), gsap.to($(o[0]), {
                             backgroundColor: "#000",
@@ -2526,8 +2526,8 @@ function GLOBAL() {
                 gsap.set(this, {
                     backgroundColor: "#fff"
                 }), gsap.to(this, {
-                    backgroundColor: "#eef3f9",
-                    color: "#29b2df",
+                    backgroundColor: "#f9f6f0",
+                    color: "#d4af37",
                     letterSpacing: "0.2em",
                     duration: .8
                 })
@@ -2542,7 +2542,7 @@ function GLOBAL() {
             var oJ = $("#hautBD a");
             if ($(oJ).mouseenter(function() {
                     gsap.to(this, {
-                        color: "#29b2df",
+                        color: "#d4af37",
                         letterSpacing: "0.2em",
                         duration: .8
                     });
@@ -2655,7 +2655,7 @@ function GLOBAL() {
                 var ee = $("#contactGint a");
                 $(ee).mouseenter(function() {
                     gsap.to(this, {
-                        color: "#29b2df",
+                        color: "#d4af37",
                         duration: .8
                     });
                     var t = $(this).find("img");
