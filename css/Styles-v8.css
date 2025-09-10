@@ -1111,10 +1111,10 @@ sup {
 .H .surv {
   display: block;
   position: absolute;
-  top: 0;
+  top: -51%;
   left: 0;
   width: 600px;
-  height: 200px;
+  height: 223%;
   z-index: 20;
   transform-origin: 0;
   opacity: 0;
@@ -1286,7 +1286,7 @@ sup {
   display: none;
 }
 .H .survLouer {
-  display: block;
+   display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -1296,7 +1296,17 @@ sup {
   transform-origin: 0;
   opacity: 0;
 }
-
+.H .surv {
+  display: block;
+  position: absolute;
+  top: -51%;
+  left: 0;
+  width: 600px;
+  height: 223%;
+  z-index: 20;
+  transform-origin: 0;
+  opacity: 0;
+}
 #location {
   float: left;
 }
