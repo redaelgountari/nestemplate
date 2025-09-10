@@ -8,7 +8,7 @@
     content="Verlia, promoteur immobilier à Casablanca. Studios haut standing L'Hermitage avec titres fonciers. À partir de 1.000.000 DHS.">
   <meta name="keywords"
     content="Verlia, immobilier Casablanca, L'Hermitage, studios haut standing, Anoual, investissement immobilier Maroc.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="geo.placename" content="Casablanca, Maroc">
   <!-- Favicon links removed - files not available in images folder -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
@@ -67,6 +67,8 @@
 
     html {
       scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
     }
 
     body {
@@ -75,6 +77,19 @@
       color: #2c3e50;
       background-color: #F4F3EA;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Improve touch targets for mobile */
+    button, a, input, textarea {
+      touch-action: manipulation;
+    }
+
+    /* Ensure images don't break layouts on mobile */
+    img {
+      max-width: 100%;
+      height: auto;
     }
 .plan-item .plan-image img:hover {
   transform: scale(1.02);
@@ -107,33 +122,60 @@
   }
   
   .plan-specs {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .plan-image img {
+    height: 300px !important;
   }
 }
 
 @media (max-width: 768px) {
   .floor-plans-section {
-    padding: 5rem 0 !important;
+    padding: 3rem 0 !important;
+    margin-top: -3% !important;
   }
   
   .plans-grid {
-    gap: 4rem !important;
+    gap: 3rem !important;
   }
   
   .plan-item {
     gap: 2rem !important;
+    padding: 1.5rem !important;
   }
   
   .plan-header h3 {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
+  }
+  
+  .plan-specs {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
   
   .spec-item {
     padding: 1rem !important;
   }
   
-  .plans-cta > div {
-    padding: 2rem !important;
+  .plan-image img {
+    height: 250px !important;
+  }
+  
+  .plan-features ul li {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 0 !important;
+    padding-left: 1.5rem !important;
+  }
+  
+  .location-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .location-image img {
+    height: 300px !important;
   }
 }
 
@@ -248,6 +290,7 @@
     .hero-section {
       position: relative;
       height: 100vh;
+      min-height: 600px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -262,8 +305,17 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url("/images/imgs001.jpeg") center / cover;
+      background: url("images/imgs001.jpeg") center / cover;
+      background-attachment: fixed;
       z-index: -2;
+    }
+
+    @media (max-width: 768px) {
+      .hero-background {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+      }
     }
 
     .hero-overlay {
@@ -976,6 +1028,24 @@
       filter: none;
     }
 
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .gallery-grid img {
+        height: 220px;
+      }
+    }
+
     /* Footer */
     .simple-footer {
       background: linear-gradient(180deg, #2c3e50 0%, #304357 100%);
@@ -994,6 +1064,27 @@
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 3rem;
       align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .simple-footer {
+        padding: 3rem 0 1.5rem;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
 
     .footer-brand .logo-text img {
@@ -1094,6 +1185,19 @@
       gap: 1rem;
     }
 
+    @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .footer-bottom .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
     .footer-bottom .footer-links {
       display: flex;
       gap: 1rem;
@@ -1113,12 +1217,12 @@
     @media (max-width: 1024px) {
       .three-columns {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
       }
 
       .features-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
       }
 
       .equipment-grid {
@@ -1127,13 +1231,32 @@
 
       .two-column-text {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
+      }
+
+      .location-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
       }
 
       /* Added responsive contact form layout */
       .contact-wrapper {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
+      }
+
+      .column-image {
+        height: 250px;
+      }
+
+      .custom-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .custom-text-blocks {
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
     }
 
@@ -1144,20 +1267,32 @@
 
       .nav-menu {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
-        padding: 2rem;
+        padding: 6rem 2rem 2rem 2rem;
         gap: 1.5rem;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        justify-content: flex-start;
+        align-items: center;
       }
 
       .nav-menu.active {
         display: flex;
+      }
+
+      .nav-menu a {
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        text-align: center;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       }
 
       .hero-title {
@@ -1168,10 +1303,58 @@
         font-size: 1.2rem;
       }
 
+      .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+
       .hero-features {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+      }
+
+      .hero-feature {
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
+        letter-spacing: 1px;
+      }
+
+      #intro {
+        padding: 1rem;
+      }
+
+      #logo img {
+        max-width: 80px !important;
+      }
+
+      #navigation {
+        padding: 1rem;
+      }
+
+      #navG {
+        margin-bottom: 2rem;
+      }
+
+      #navG img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
+        border-radius: 8px;
+      }
+
+      #navD {
+        padding: 1rem;
+      }
+
+      #navD1, #navD2 {
+        padding: 1rem 0;
+      }
+
+      #navD ul li a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
       }
 
       .section-title {
@@ -1207,8 +1390,23 @@
     }
 
     @media (max-width: 480px) {
+      .hero-section {
+        height: 90vh;
+        min-height: 500px;
+      }
+
       .hero-title {
         font-size: 2.2rem;
+        line-height: 1.1;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-description {
+        font-size: 0.9rem;
+        padding: 0 1rem;
       }
 
       .section-title {
@@ -1236,6 +1434,78 @@
       .form-title,
       .info-title {
         font-size: 1.5rem;
+      }
+
+      .fixed-social-icons {
+        right: 5px;
+        gap: 8px;
+      }
+      
+      .fixed-social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+      }
+
+      /* Improve mobile scrolling performance */
+      .hero-section,
+      .project-overview,
+      .detailed-features,
+      .equipment-section,
+      .why-choose-section,
+      .contact-section {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+      }
+
+      /* Mobile-specific improvements */
+      .container, .container2 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+      }
+
+      .section-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+      }
+
+      .custom-main-title {
+        font-size: 2rem !important;
+      }
+
+      .custom-content-block {
+        padding: 1.5rem !important;
+      }
+
+      /* Optimize form elements for mobile */
+      .form-input, .form-textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 0.8rem;
+      }
+
+      .form-submit-btn {
+        padding: 1rem 2rem;
+        min-height: 44px; /* Ensure good touch target */
+      }
+
+      /* Improve map responsiveness */
+      .map-container iframe {
+        height: 250px !important;
+      }
+
+      /* Better spacing for mobile */
+      .custom-title-section {
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+      }
+
+      .titreA.paddH2 {
+        padding: 1rem 0;
       }
     }
 
@@ -1554,8 +1824,24 @@
       }
 
       .custom-amenities-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .custom-amenity-item img {
+        height: 150px;
+      }
+
+      .equipment-image img {
+        height: 250px !important;
+      }
+
+      .why-choose-section {
+        padding: 4rem 0 !important;
+      }
+
+      .detailed-features {
+        padding: 4rem 0 !important;
       }
 
       .custom-main-title,
@@ -1569,11 +1855,27 @@
 
       .custom-images-row {
         flex-direction: column;
+        gap: 10px;
       }
 
       .custom-images-row img {
         width: 100%;
-        height: 200px;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .gallery-section {
+        padding: 4rem 0;
+      }
+
+      .equipment-section {
+        padding: 4rem 0;
+        margin-top: -40px;
+      }
+
+      .location-section {
+        padding: 4rem 0;
+        margin-top: -3%;
       }
 
       .custom-section-light,
@@ -2514,10 +2816,10 @@
         </div>
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 
           <!-- Brand Section -->
-          <div class="lg:col-span-1 lg:pr-8">
+          <div class="sm:col-span-2 lg:col-span-1 lg:pr-8">
             <div class="mb-6">
               <img loading="lazy" src="images/verlia-logo-blanc.png" alt="Verlia immobilier, promoteur Casablanca"
                 class="h-12 w-auto filter brightness-0 invert">
